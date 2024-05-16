@@ -1,114 +1,108 @@
 ---
-title: "Using Markdown"
+title: "Introduction"
 teaching: 10
-exercises: 2
+exercises: 0
+questions:
+- "What is the point of these exercises?"
+- "How do I find the data I want to work with?"
+objectives:
+- "To understand why we start with the Open Data Portal"
+- "To understand the basics of how the datasets are divided up"
+keypoints:
+- "Finding the data is non-trivial, but all the information is on the portal"
+- "A careful understanding of the search options can help with finding what you need"
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
+> ## Ready to go?
+> The 3/4 of this lesson is done entirely in the browser. 
+> 
+> However, [Episode 4: What is in the data files?](https://cms-opendata-workshop.github.io/workshopwhepp-lesson-dataset-scouting/04-what-is-in-the-data/index.html), requires the use of a running CMSSW environment in the CMS open data Docker container. Make sure you have completed the [Docker pre-exercise](https://cms-opendata-workshop.github.io/workshopwhepp-lesson-docker/) if your operating system can run the CMSSW container.
+{: .callout}
 
-- How do you write a lesson using Markdown and `{sandpaper}`?
+> ## You've got a great idea! What's next?
+> Suppose you have a great idea that you want to test out with real data! You're going to want
+> to know:
+> * What **year** were the data taken that would work best for you?
+> * In which **primary dataset** were the data of your interest stored?
+> * What **Monte Carlo datasets** are available and appropriate for your studies?
+>     * This may mean finding simulated physics processes that are **background** to your signal
+>     * This may mean finding simulated physics processes for your **signal**, if they exist
+>     * Possibly just finding simulated datasets where you *know* the answer, allowing you to test your new analysis techniques
+{: .checklist}
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+In this lesson, we'll walk through the process of finding out what data and 
+Monte Carlo are available to you, how to find them, and how to examine what 
+data are in the individual data files. 
 
-::::::::::::::::::::::::::::::::::::: objectives
+> ## What is a Monte Carlo dataset?
+> You'll often hear about physicists using *Monte Carlo data* or sometimes just referring to
+> *Monte Carlo*. In both cases, we are referring to *simulations* of different physics processes, 
+> which then mimics how the particles would move through the CMS detector and how they
+> might be affected (on average) as they pass through the material. This data is then 
+> processed just like the "real" data (referred to as *collider data*). 
+> 
+> In this way, the analysts can see how the detector records different physics processes
+> and best understand how these processes "look" when we analyze the data. This better
+> helps us understand both the signal that we are looking for and the backgrounds
+> which might hide what we are looking for. 
+{: .callout}
 
-- Explain how to use markdown with The Carpentries Workbench
-- Demonstrate how to include pieces of code, figures, and nested challenge blocks
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-## Introduction
-
-This is a lesson created via The Carpentries Workbench. It is written in
-[Pandoc-flavored Markdown](https://pandoc.org/MANUAL.txt) for static files and
-[R Markdown][r-markdown] for dynamic files that can render code into output. 
-Please refer to the [Introduction to The Carpentries 
-Workbench](https://carpentries.github.io/sandpaper-docs/) for full documentation.
-
-What you need to know is that there are three sections required for a valid
-Carpentries lesson:
-
- 1. `questions` are displayed at the beginning of the episode to prime the
-    learner for the content.
- 2. `objectives` are the learning objectives for an episode displayed with
-    the questions.
- 3. `keypoints` are displayed at the end of the episode to reinforce the
-    objectives.
-
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
-
-Inline instructor notes can help inform instructors of timing challenges
-associated with the lessons. They appear in the "Instructor View"
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::: challenge 
-
-## Challenge 1: Can you do it?
-
-What is the output of this command?
-
-```r
-paste("This", "new", "lesson", "looks", "good")
-```
-
-:::::::::::::::::::::::: solution 
-
-## Output
- 
-```output
-[1] "This new lesson looks good"
-```
-
-:::::::::::::::::::::::::::::::::
+First of all, let's understand how the data are stored and why we need certain
+tools to access them. 
 
 
-## Challenge 2: how do you nest solutions within challenge blocks?
+# The CERN Open Data Portal
 
-:::::::::::::::::::::::: solution 
+In some of the earliest discussions about making HEP data publicly available there were many concerns about 
+people using and analyzing "other people's" data. The concern centered around well-meaning scientists improperly 
+analyzing data and coming up with incorrect conclusions. 
 
-You can add a line with at least three colons and a `solution` tag.
+While no system is perfect, one way to guard against this is to only release well-understood, well-calibrated 
+datasets and to make sure open data analysts *only* use these datasets. These datasets are given
+a [Digital Object Identifier (DOI)](https://www.doi.org/) code for tracking. And if there
+are ever questions about the validity of the data, it allows us to check the 
+[data provenance](https://en.wikipedia.org/wiki/Data_lineage#:~:text=Data%20provenance%20refers%20to%20records,the%20data%20and%20its%20origins.).
 
-:::::::::::::::::::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::
+## DOI
 
-## Figures
+The [Digital Object Identifier (DOI)](https://www.doi.org/) system allows people to assign a unique
+ID to any piece of digital media: a book, a piece of music, a software package, or a dataset. If you want to learn
+more about the DOI process, you can learn more at their [FAQ](https://www.doi.org/faq.html). Assigning
+of DOIs to CERN products is generally handled through [Zenodo](https://zenodo.org/). 
 
-You can use standard markdown for static figures with the following syntax:
+> ## Challenge!
+> You will find that all the datasets have their DOI listed at the top of their page on the portal. 
+> Can you locate where the DOI is shown for this dataset, Record 6029,
+> [DoubleElectron primary dataset in AOD format from Run of 2012 (/DoubleElectron/Run2012C-22Jan2013-v1/AOD)](http://opendata.cern.ch/record/6029)
+> 
+<!-- > ![](../assets/img/portal_screenshot_DOI_example.png) -->
+>
+> With a DOI, you can create citations to any of these records, for example using a tool like [doi2bib](https://www.doi2bib.org).
+{: .challenge}
 
-`![optional caption that appears below the figure](figure url){alt='alt text for
-accessibility purposes'}`
+## Provenance
 
-![You belong in The Carpentries!](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='Blue Carpentries hex person logo with no text.'}
+You will hear experimentalists refer to the "*provenance*" of a dataset. From the 
+[Cambridge dictionary](https://dictionary.cambridge.org/us/dictionary/english/provenance), provenance
+refers to "*the place of origin of something*". 
+The way we use it, we are referring to how we keep track of the history of how a dataset was 
+processed: what version of the software was used for reconstruction, what period of calibrations
+was used during that processing, etc. In this way, we are documenting the 
+[data lineage](https://en.wikipedia.org/wiki/Data_lineage#:~:text=Data%20provenance%20refers%20to%20records,the%20data%20and%20its%20origins.)
+of our datasets. 
+> ## From [Wikipeda](https://en.wikipedia.org/wiki/Data_lineage#:~:text=Data%20provenance%20refers%20to%20records,the%20data%20and%20its%20origins.)
+> Data lineage includes the data origin, what happens to it and where it moves over time.
+> Data lineage gives visibility while greatly simplifying the ability to trace errors back to the root cause in a data analytics process.
+{: .testimonial}
 
-::::::::::::::::::::::::::::::::::::: callout
-
-Callout sections can highlight information.
-
-They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present "asides": 
-content that is not central to the narrative of the lesson,
-e.g. by providing the answer to a commonly-asked question.
-
-::::::::::::::::::::::::::::::::::::::::::::::::
+Provenance is an an important part of our data quality checks
+and another reason we want to make sure you are using only vetted and calibrated data. 
 
 
-## Math
+## This lesson
 
-One of our episodes contains $\LaTeX$ equations when describing how to create
-dynamic reports with {knitr}, so we now use mathjax to describe this:
+For all the reasons given above, we encourage you to familiarize yourself with the search features and options
+on the portal. With your feedback, we can also work to create better search tools/options and landing
+points. 
 
-`$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
-
-Cool, right?
-
-::::::::::::::::::::::::::::::::::::: keypoints 
-
-- Use `.md` files for episodes when you want static content
-- Use `.Rmd` files for episodes when you need to generate output
-- Run `sandpaper::check_lesson()` to identify any issues with your lesson
-- Run `sandpaper::build_lesson()` to preview your lesson locally
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-[r-markdown]: https://rmarkdown.rstudio.com/
+This exercise will guide you through the current approach to finding data and Monte Carlo. Let's go!

@@ -9,6 +9,10 @@ No attempt for a local build was made, and in principle, there is no need to ins
 
 The setup instructions are in `learners/setup.md` and the separate pages under `episodes`.
 
+The `md-outputs` branch shows after setting up the repository. No need to merge them.
+
+The schedule shows only in the "Instructor view": https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-dataset-scouting/instructor/index.html 
+Use this link if you want to show it.
 
 ## Configuring the lesson
 
