@@ -194,6 +194,18 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush3">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading3">
+        <a href="02-where-are-the-datasets.html">2. Where are the datasets?</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -292,12 +304,11 @@
 </h3>
 <div class="callout-content">
 <p>The 3/4 of this lesson is done entirely in the browser.</p>
-<p>However, <a href="https://cms-opendata-workshop.github.io/workshopwhepp-lesson-dataset-scouting/04-what-is-in-the-data/index.html" class="external-link">Episode
-4: What is in the data files?</a>, requires the use of a running CMSSW
-environment in the CMS open data Docker container. Make sure you have
-completed the <a href="https://cms-opendata-workshop.github.io/workshopwhepp-lesson-docker/" class="external-link">Docker
-pre-exercise</a> if your operating system can run the CMSSW
-container.</p>
+<p>However, <a href="https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-dataset-scouting/04-cli-through-cernopendata-client.html" class="external-link">Episode
+4: How to access metadata on the command line?</a>, requires the use of
+a command-line tool. It is available as a Docker container or it can be
+installed with <code>pip</code>. Make sure you have completed the <a href="https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-docker/" class="external-link">Docker
+pre-exercise</a> and have docker installed..</p>
 </div>
 </div>
 </div>
@@ -386,8 +397,7 @@ provenance</a>.</p>
 (DOI)</a> system allows people to assign a unique ID to any piece of
 digital media: a book, a piece of music, a software package, or a
 dataset. If you want to learn more about the DOI process, you can learn
-more at their <a href="https://www.doi.org/faq.html" class="external-link">FAQ</a>. Assigning
-of DOIs to CERN products is generally handled through <a href="https://zenodo.org/" class="external-link">Zenodo</a>.</p>
+more at their <a href="https://www.doi.org/faq.html" class="external-link">FAQ</a>.</p>
 <div id="challenge" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -398,9 +408,9 @@ of DOIs to CERN products is generally handled through <a href="https://zenodo.or
 <div class="callout-content">
 <p>You will find that all the datasets have their DOI listed at the top
 of their page on the portal. Can you locate where the DOI is shown for
-this dataset, Record 6029, <a href="http://opendata.cern.ch/record/6029" class="external-link">DoubleElectron primary
-dataset in AOD format from Run of 2012
-(/DoubleElectron/Run2012C-22Jan2013-v1/AOD)</a></p>
+this dataset, Record 30521, <a href="https://opendata.cern.ch/record/30521" class="external-link">DoubleEG primary dataset in
+NANOAOD format from RunG of 2016
+(/DoubleEG/Run2016G-UL2016_MiniAODv2_NanoAODv9-v1/NANOAOD)</a></p>
 <p>Image here from assets/img/portal_screenshot_DOI_example.png</p>
 <p>With a DOI, you can create citations to any of these records, for
 example using a tool like <a href="https://www.doi2bib.org" class="external-link">doi2bib</a>.</p>
@@ -418,12 +428,12 @@ track of the history of how a dataset was processed: what version of the
 software was used for reconstruction, what period of calibrations was
 used during that processing, etc. In this way, we are documenting the <a href="https://en.wikipedia.org/wiki/Data_lineage#:~:text=Data%20provenance%20refers%20to%20records,the%20data%20and%20its%20origins." class="external-link">data
 lineage</a> of our datasets.</p>
-<div id="from-wikipeda" class="callout testimonial">
+<div id="from-wikipedia" class="callout testimonial">
 <div class="callout-square">
 <i class="callout-icon" data-feather="heart"></i>
 </div>
-<div id="from-wikipeda" class="callout-inner">
-<h3 class="callout-title">From<a href="https://en.wikipedia.org/wiki/Data_lineage#:~:text=Data%20provenance%20refers%20to%20records,the%20data%20and%20its%20origins." class="external-link">Wikipeda</a><a class="anchor" aria-label="anchor" href="#from-wikipeda"></a>
+<div id="from-wikipedia" class="callout-inner">
+<h3 class="callout-title">From<a href="https://en.wikipedia.org/wiki/Data_lineage#:~:text=Data%20provenance%20refers%20to%20records,the%20data%20and%20its%20origins." class="external-link">Wikipedia</a><a class="anchor" aria-label="anchor" href="#from-wikipedia"></a>
 </h3>
 <div class="callout-content">
 <p>Data lineage includes the data origin, what happens to it and where
@@ -458,6 +468,90 @@ data and Monte Carlo. Let’s go!</p>
 portal</li>
 <li>A careful understanding of the search options can help with finding
 what you need</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- 
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use. 
+ -->
+</section></section><section id="aio-02-where-are-the-datasets"><p>Content from <a href="02-where-are-the-datasets.html">Where are the datasets?</a></p>
+<hr>
+<p>Last updated on 2024-05-16 |
+        
+        <a href="https://github.com/cms-opendata-workshop/workshopqcd-2024-lesson-dataset-scouting/edit/main/episodes/02-where-are-the-datasets.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>Where do I find datasets for data and Monte Carlo?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Be able to find the data and Monte Carlo datasets</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="cern-open-data-portal"><h2 class="section-heading">CERN Open Data Portal<a class="anchor" aria-label="anchor" href="#cern-open-data-portal"></a>
+</h2>
+<hr class="half-width">
+<p>Our starting point is the landing page for <a href="http://opendata.cern.ch/" class="external-link">CERN Open Data Portal</a>. You should
+definitely take some time to explore it. But for now we will select the
+CMS data.</p>
+<div id="cern-open-data-portal-1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="cern-open-data-portal-1" class="callout-inner">
+<h3 class="callout-title">CERN Open Data Portal<a class="anchor" aria-label="anchor" href="#cern-open-data-portal-1"></a>
+</h3>
+<div class="callout-content">
+<p>The landing page for the <a href="http://opendata.cern.ch/" class="external-link">CERN Open
+Data Portal</a>. <img src="files/portal_screenshot_landing_page.png" class="figure"></p>
+</div>
+</div>
+</div>
+<div id="make-a-selection" class="callout prereq">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check"></i>
+</div>
+<div id="make-a-selection" class="callout-inner">
+<h3 class="callout-title">Make a selection!<a class="anchor" aria-label="anchor" href="#make-a-selection"></a>
+</h3>
+<div class="callout-content">
+<p>Find the CMS link under <strong>Focus on</strong> and click on
+it.</p>
+</div>
+</div>
+</div>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li>Use the filter selections in the left-hand sidebar of the CERN Open
+Data Portal to find datasets.</li>
 </ul>
 </div>
 </div>

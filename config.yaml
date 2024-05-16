@@ -62,7 +62,7 @@ contact: 'cms-dpoa-coordinators@cern.ch' # FIXME
 # Order of episodes in your lesson
 episodes: 
 - 01-introduction.md
-# - 02-where-are-the-datasets.md
+- 02-where-are-the-datasets.md
 # - 03-what-data-is-available.md
 # - 04-cli-through-cernopendata-client.md
 # - 05-what-is-in-the-data.md

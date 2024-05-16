@@ -173,6 +173,15 @@
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush3">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading3">
+        <a href="02-where-are-the-datasets.html">2. Where are the datasets?</a>
+    </div><!--/div.accordion-header-->
+        
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -216,7 +225,7 @@
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="02-where-are-the-datasets.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -224,8 +233,8 @@
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Home
         </a>
-        <a class="chapter-link float-end" href="index.html" rel="next">
-          Home
+        <a class="chapter-link float-end" href="02-where-are-the-datasets.html" rel="next">
+          Next: Where are the... 
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -275,12 +284,11 @@
 </h3>
 <div class="callout-content">
 <p>The 3/4 of this lesson is done entirely in the browser.</p>
-<p>However, <a href="https://cms-opendata-workshop.github.io/workshopwhepp-lesson-dataset-scouting/04-what-is-in-the-data/index.html" class="external-link">Episode
-4: What is in the data files?</a>, requires the use of a running CMSSW
-environment in the CMS open data Docker container. Make sure you have
-completed the <a href="https://cms-opendata-workshop.github.io/workshopwhepp-lesson-docker/" class="external-link">Docker
-pre-exercise</a> if your operating system can run the CMSSW
-container.</p>
+<p>However, <a href="https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-dataset-scouting/04-cli-through-cernopendata-client.html" class="external-link">Episode
+4: How to access metadata on the command line?</a>, requires the use of
+a command-line tool. It is available as a Docker container or it can be
+installed with <code>pip</code>. Make sure you have completed the <a href="https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-docker/" class="external-link">Docker
+pre-exercise</a> and have docker installed..</p>
 </div>
 </div>
 </div>
@@ -363,8 +371,7 @@ provenance</a>.</p>
 (DOI)</a> system allows people to assign a unique ID to any piece of
 digital media: a book, a piece of music, a software package, or a
 dataset. If you want to learn more about the DOI process, you can learn
-more at their <a href="https://www.doi.org/faq.html" class="external-link">FAQ</a>. Assigning
-of DOIs to CERN products is generally handled through <a href="https://zenodo.org/" class="external-link">Zenodo</a>.</p>
+more at their <a href="https://www.doi.org/faq.html" class="external-link">FAQ</a>.</p>
 <div id="challenge" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -375,9 +382,9 @@ of DOIs to CERN products is generally handled through <a href="https://zenodo.or
 <div class="callout-content">
 <p>You will find that all the datasets have their DOI listed at the top
 of their page on the portal. Can you locate where the DOI is shown for
-this dataset, Record 6029, <a href="http://opendata.cern.ch/record/6029" class="external-link">DoubleElectron primary
-dataset in AOD format from Run of 2012
-(/DoubleElectron/Run2012C-22Jan2013-v1/AOD)</a></p>
+this dataset, Record 30521, <a href="https://opendata.cern.ch/record/30521" class="external-link">DoubleEG primary dataset in
+NANOAOD format from RunG of 2016
+(/DoubleEG/Run2016G-UL2016_MiniAODv2_NanoAODv9-v1/NANOAOD)</a></p>
 <p>Image here from assets/img/portal_screenshot_DOI_example.png</p>
 <p>With a DOI, you can create citations to any of these records, for
 example using a tool like <a href="https://www.doi2bib.org" class="external-link">doi2bib</a>.</p>
@@ -394,12 +401,12 @@ track of the history of how a dataset was processed: what version of the
 software was used for reconstruction, what period of calibrations was
 used during that processing, etc. In this way, we are documenting the <a href="https://en.wikipedia.org/wiki/Data_lineage#:~:text=Data%20provenance%20refers%20to%20records,the%20data%20and%20its%20origins." class="external-link">data
 lineage</a> of our datasets.</p>
-<div id="from-wikipeda" class="callout testimonial">
+<div id="from-wikipedia" class="callout testimonial">
 <div class="callout-square">
 <i class="callout-icon" data-feather="heart"></i>
 </div>
-<div id="from-wikipeda" class="callout-inner">
-<h3 class="callout-title">From<a href="https://en.wikipedia.org/wiki/Data_lineage#:~:text=Data%20provenance%20refers%20to%20records,the%20data%20and%20its%20origins." class="external-link">Wikipeda</a><a class="anchor" aria-label="anchor" href="#from-wikipeda"></a>
+<div id="from-wikipedia" class="callout-inner">
+<h3 class="callout-title">From<a href="https://en.wikipedia.org/wiki/Data_lineage#:~:text=Data%20provenance%20refers%20to%20records,the%20data%20and%20its%20origins." class="external-link">Wikipedia</a><a class="anchor" aria-label="anchor" href="#from-wikipedia"></a>
 </h3>
 <div class="callout-content">
 <p>Data lineage includes the data origin, what happens to it and where
@@ -442,7 +449,7 @@ any links that you are not going to use.
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="02-where-are-the-datasets.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -450,8 +457,8 @@ any links that you are not going to use.
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Home
         </a>
-        <a class="chapter-link float-end" href="index.html" rel="next">
-          Home
+        <a class="chapter-link float-end" href="02-where-are-the-datasets.html" rel="next">
+          Next: Where are the... 
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
