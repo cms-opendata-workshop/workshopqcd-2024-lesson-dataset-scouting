@@ -65,6 +65,11 @@ There might be a tool somewhere, but if doing it by hand:
    :::::::::::::::::::::::::::::::::::::::::::::::
    ```
 
+## Notes on formatting
+
+Note that double-intend (two tabs) produces a code block. Not necessarily what one would expect, e.g. in nested lists the second level items might appear as a code block.
+
+
 ## Configuring the lesson
 
 Follow the steps below to

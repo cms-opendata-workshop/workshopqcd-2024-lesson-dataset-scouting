@@ -39,15 +39,20 @@ Can any text go here?
 
 Example indentation:
 
-   this indented
+   this indented with tab
 
       this is indented x2
+
+   this is three spaces
+
+      this is with 6 spaces
 
 :::::: checklist
 
 ## You've got a great idea! What's next?
-<!-- Suppose you have a great idea that you want to test out with real data! You're going to want
-to know: -->
+
+Suppose you have a great idea that you want to test out with real data! You're going to want
+to know:
 
 -[x] What **year** were the data taken that would work best for you?
 -[x] In which **primary dataset** were the data of your interest stored?
