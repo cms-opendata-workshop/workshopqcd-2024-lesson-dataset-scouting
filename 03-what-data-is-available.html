@@ -183,6 +183,7 @@
       <div class="accordion-body">
         <ul><li><a href="#data-and-run-periods">Data and run periods</a></li>
 <li><a href="#monte-carlo">Monte Carlo</a></li>
+<li><a href="#more-monte-carlo-samples">More Monte Carlo samples</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
         
@@ -443,13 +444,13 @@ isting<a class="anchor" aria-label="anchor" href="#cern-open-data-portal---cms-d
 <div class="callout-content">
 <p>Sample listing of some of the ROOT files in the <a href="https://opendata.cern.ch/record/30563/files/CMS_Run2016H_SingleMuon_NANOAOD_UL2016_MiniAODv2_NanoAODv9-v1_130000_file_index.txt" class="external-link">/SingleMuon/Run2016H-UL2016_MiniAODv2_NanoAODv9-v1/NANOAOD</a>
 dataset.</p>
-<figure><img src="assets/img/portal_screenshot_search_bar_collision_single_mu_ROOT_files.png" class="figure mx-auto d-block"></figure></div>
+<figure><img src="fig/portal_screenshot_cms_2016_singlemuon_nanoaod_dataset_listing.png" class="figure mx-auto d-block"></figure></div>
 </div>
 </div>
 <p>The prepended <code>root:</code> is because of how these files are
 accessed. We’ll use these directory paths when we go to inspect some of
 these files. The grouping of the files in separate lists comes from the
-reprocessing computing step and has no particular meaning.</p>
+reprocessing computing operations and has no particular meaning.</p>
 </div>
 </section><section id="monte-carlo"><h2 class="section-heading">Monte Carlo<a class="anchor" aria-label="anchor" href="#monte-carlo"></a>
 </h2>
@@ -477,6 +478,86 @@ left bar.</p>
 </div>
 </div>
 </div>
+<div id="cern-open-data-portal---cms-monte-carlo-datasets" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="cern-open-data-portal---cms-monte-carlo-datasets" class="callout-inner">
+<h3 class="callout-title">CERN Open Data Portal - CMS Monte Carlo
+datasets<a class="anchor" aria-label="anchor" href="#cern-open-data-portal---cms-monte-carlo-datasets"></a>
+</h3>
+<div class="callout-content">
+<p>Monte Carlo dataset category search options</p>
+<figure><img src="fig/portal_screenshot_cms_2016_mc_categories.png" class="figure mx-auto d-block"></figure></div>
+</div>
+</div>
+<p>There are a lot of Monte Carlo samples! It’s up to you to determine
+which ones might contribute to your background. The names try to give
+you some sense of the primary process, subsequent decays, the beam
+energy and specific simulation software (e.g. Pythia), but if you have
+questions, reach out to the organizers. <!-- through 
+[Mattermost](https://mattermost.web.cern.ch/cmsodws2022/channels/town-square). --></p>
+<p>As with the collision data, here are three (3) parts to the names,
+separated by `/’.</p>
+<p>Let’s look at one of them: <a href="https://opendata.cern.ch/record/35751" class="external-link">/DYToMuMu_M-120To200_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL16NanoAODv9-106X_mcRun2_asymptotic_v17-v1/NANOAODSIM</a></p>
+<p><strong>Physics process/Monte Carlo sample</strong></p>
+<p><em>DYToMuMu_M-120To200_TuneCP5_13TeV-powheg-pythia8</em> is hard to
+understand at first glance, but if we take our time we might be able to
+intuit some of the meaning. This appears to simulate a <a href="https://en.wikipedia.org/wiki/Drell%E2%80%93Yan_process" class="external-link">Drell-Yan
+process</a> in which two quarks interact to produce a virtual photon/Z
+boson which then couples to two leptons. The <em>M-120To200</em> refers
+to a selection that has been imposed requiring the mass of the di-lepton
+pair to be between 120 and 200 50 GeV/c^2. <em>TuneCP5</em> refers to
+the the set of CMS underlying-event parameters of PYTHIA8 event
+generator. <em>13TeV</em> is the beam energy used in the simulation, the
+remaining fields tell us what software was used to generate this
+(<em>powheg</em> for event generation and <em>pythia8</em> for
+hadronization).</p>
+<p><strong>Processing and Global tag</strong></p>
+<p><em>RunIISummer20UL16NanoAODv9-106X_mcRun2_asymptotic_v17-v1</em>
+refers to how and when this Monte Carlo was processed. The details are
+not so important for you because the open data coordinators have taken
+care to only post vetted data. But it is all part of the data
+provenance.</p>
+<p><strong>Data format</strong></p>
+<p>The last field refers to the data format and here again there is a
+slight difference.</p>
+<ul><li>
+<strong>MINIAODSIM</strong> or <strong>NANOAODSIM</strong> stands
+for <em>Mini or Nano Analysis Object Data - Simulation</em>. This is the
+same as the <strong>MINIAOD</strong> or <strong>NANOAOD</strong> format
+used in the collision data, except that there are some extra fields that
+store information about the original, generated 4-vectors at the parton
+level, as well as some other Monte Carlo-specific information.</li>
+</ul><p>One difference is that you will want to select the Monte Carlo events
+that pass certain triggers at the time of your analysis, while that
+selection was already done in the data by the detector hardware/software
+itself.</p>
+<p>If you click on any of these fields, you can see more details about
+the samples, similar to the collision data.</p>
+</section><section id="more-monte-carlo-samples"><h2 class="section-heading">More Monte Carlo samples<a class="anchor" aria-label="anchor" href="#more-monte-carlo-samples"></a>
+</h2>
+<hr class="half-width"><p>If you would like a general idea of what other physics processes have
+been simulated, you can check scroll down the sidebar until you come to
+<strong>Category</strong>.</p>
+<div id="cern-open-data-portal---cms-monte-carlo-datasets-1" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="cern-open-data-portal---cms-monte-carlo-datasets-1" class="callout-inner">
+<h3 class="callout-title">CERN Open Data Portal - CMS Monte Carlo
+datasets<a class="anchor" aria-label="anchor" href="#cern-open-data-portal---cms-monte-carlo-datasets-1"></a>
+</h3>
+<div class="callout-content">
+<p>Select some Monte Carlo dataset and see if you can find the generator
+information in the dataset provenance.</p>
+</div>
+</div>
+</div>
+<p>You may have to do a bit of poking around to find the dataset that is
+most appropriate for what you want to do, but remember, you can always
+reach out to the organizers. <!-- through 
+[Mattermost](https://mattermost.web.cern.ch/cmsodwswhepp24/channels/town-square). --></p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
