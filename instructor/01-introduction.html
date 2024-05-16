@@ -334,18 +334,49 @@ data! You’re going to want to know:</p>
 </ul></li>
 </ul></li>
 <li>topic 2</li>
+</ul><p>List with a comment line:</p>
+<ul><li>topic 1
+<ul><li>topic 1.1 <!-- comment here -->
+<ul><li>topic 1.1.1</li>
+</ul></li>
+</ul></li>
+<li>topic 2</li>
 </ul><p>List html:</p>
 <ul><li>
 topic 1
 </li>
+<li>
+topic 2
+<ul><li>
+topic 2.1
+<ul><li>
+topic 2.1.1
+</li>
+</ul><div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>     <span class="op">&lt;</span>/li<span class="op">&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  <span class="op">&lt;</span>/ul<span class="op">&gt;</span></span></code></pre>
+</div>
+</li>
+<li>
+topic 3
+</li>
+</ul><p>A “flat” html list:</p>
 <ul><li>
 topic 1
 </li>
-<ul><li>
-topic 1.1.1
-</li>
-</ul></ul><li>
+<li>
 topic 2
+<ul><li>
+topic 2.1
+<ul><li>
+topic 2.1.1
+</li>
+</ul></li>
+</ul></li>
+<li>
+topic 3
 </li>
 </ul><div id="youve-got-a-great-idea-whats-next" class="callout checklist">
 <div class="callout-square">
@@ -357,20 +388,27 @@ topic 2
 <div class="callout-content">
 <p>Suppose you have a great idea that you want to test out with real
 data! You’re going to want to know:</p>
-<ul class="task-list"><li><label><input type="checkbox" checked>What
+<ul><li><p><label><input type="checkbox" checked>What
 <strong>year</strong> were the data taken that would work best for
-you?</label></li>
-<li><label><input type="checkbox" checked>In which <strong>primary
-dataset</strong> were the data of your interest stored?</label></li>
-<li><label><input type="checkbox" checked>What <strong>Monte Carlo
-datasets</strong> are available and appropriate for your
-studies?</label></li>
+you?</label></p></li>
+<li><p><label><input type="checkbox" checked>In which
+<strong>primary dataset</strong> were the data of your interest
+stored?</label></p></li>
+<li><p><label><input type="checkbox" checked>What <strong>Monte
+Carlo datasets</strong> are available and appropriate for your
+studies?</label></p></li>
+<li>
+<p>This may mean</p>
+<ul><li>finding simulated physics processes that are
+<strong>background</strong> to your signal</li>
+<li>finding simulated physics processes for your
+<strong>signal</strong>, if they exist</li>
+<li>possibly just finding simulated datasets where you <em>know</em> the
+answer, allowing you to test your new analysis techniques.</li>
+</ul></li>
 </ul></div>
 </div>
 </div>
-<!-- - This may mean finding simulated physics processes that are **background** to your signal
-- This may mean finding simulated physics processes for your **signal**, if they exist
-- Possibly just finding simulated datasets where you *know* the answer, allowing you to test your new analysis techniques -->
 <p>In this lesson, we’ll walk through the process of finding out what
 data and Monte Carlo are available to you, how to find them, and how to
 examine what data are in the individual data files.</p>
@@ -495,7 +533,8 @@ what you need</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
  -->
-</section></div> <!-- / div.lesson-content -->
+</section></li>
+</ul></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="../instructor/index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
