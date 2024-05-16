@@ -1,0 +1,114 @@
+---
+title: "What data and Monte Carlo are available?"
+teaching: 5
+exercises: 10
+---
+
+:::::: questions
+- What data and run periods are available?
+- What data do the collision datasets contain?
+- What Monte Carlo samples are available?
+
+::::::
+
+:::::: objectives
+- To be able to navigate the CERN Open Data Portal's search tools
+- To be able to find what collision data and Monte Carlo datasets there are using these search tools
+
+::::::
+
+## Data and run periods
+
+We make a distinction between *data* which come from the real-life CMS detector
+and simulated *Monte Carlo* data. In general, when we say *data*, we mean the real, CMS-detector-created
+data.
+
+The data available are from what is known as **Run 1**, spanning 2010-2012, and **Run 2** spanning 2015-2018. The latest data are from 2016 and were release in April 2024. The run
+periods each year can also be broken into **A**, **B**, **C**, and so-on, sub-periods and you may see
+that in some of the dataset names. 
+
+:::::: prereq
+## Make a selection!
+If you are coming from the previous page you should have selected **CMS**, **Dataset**, and **2016**. 
+::::::::::::
+
+:::::: callout
+## CERN Open Data Portal - CMS datasets
+Selecting CMS, Dataset, and 2016.
+
+*Your view might look slightly different than this screenshot as the available datasets and tools are regularly updated.*
+
+![](fig/portal_screenshot_cms_2016_datasets_selected.png)
+::::::::::::
+
+When **Dataset** is selected, there are 3 subcategories: 
+* **Collision** refers to the real data that came off of the CMS detector.
+* **Derived** refers to datasets that have been further processed for some specific purpose, such as outreach
+and education or the [ispy](https://cms-outreach.github.io/ispy/) event display. 
+* **Simulated** refers to Monte Carlo datasets. 
+
+:::::: prereq
+
+## Make a selection!
+Let's now select uniquely the **Collision** option under **Dataset**. 
+::::::::::::
+
+### Collision data
+
+When you select **Collision** you'll see a lot of datasets with names that may be confusing. 
+Let's take a look at two of them and see if we can break down these names.
+
+:::::: callout
+## CERN Open Data Portal - CMS datasets
+Some samples from the 2016 collision data
+
+[/DoubleEG/Run2016G-UL2016_MiniAODv2-v1/MINIAOD]](http://opendata.cern.ch/record/30504)
+![](fig/portal_screenshot_cms_2016_doubleeg_miniaod.png)
+[/SingleMuon/Run2016H-UL2016_MiniAODv2_NanoAODv9-v1/NANOAOD](http://opendata.cern.ch/record/30563)
+![](fig/portal_screenshot_cms_2016_singlemuon_nanoaod.png)
+::::::::::::
+
+There are three (3) parts to the names, separated by `/'. 
+
+**Dataset name**
+
+*DoubleEG* or *SingleMuon* is the name of the dataset. Events stored in these primary datasets were selected by *triggers* of usually of a same type. For each dataset, the list of triggers is listed in the dataset record. 
+<!-- You will learn more about them in the trigger lesson during the workshop, 
+but for now,  -->
+You can learn more about them in the lesson of [the CMS Open Data workshops](https://cms-opendata-guide.web.cern.ch/cmsOpenData/workshops/), but for now, remind yourself that they
+select out some subset of the collisions based on certain criteria in the hardware
+or software. 
+
+Some of the dataset names are quite difficult to intuit what they mean. Others should be roughly understandable. For example, 
+
+* **DoubleEG** contains mainly events with at least two electrons (E) or photons (G: gamma) above a certain energy threshold. 
+* **SingleMu** contains mainly events with at least one muon above a certain momentum threshold. 
+* **MinimumBias** events are taken without any trigger or selection criteria. 
+
+**Run period and processing string**
+
+*Run2016G* and *Run2016H* refer to when the data were taken, and *UL2016_MiniAODv2-v1* and *UL2016_MiniAODv2_NanoAODv9-v1*
+when and how
+the data were reprocessed. The details are not so important for you because CMS only releases
+vetted data. If you were a CMS analyst working on the data as it was being processed, 
+you might have to shift your analysis to a different dataset once all calibrations were completed. 
+
+**Data format**
+
+CMS data are stored in different formats:
+* **RAW** files contain information directly from the detector in the form of hits from the TDCs/ADCs. 
+(TDC refers to to *[Time to Digital Converter](https://en.wikipedia.org/wiki/Time-to-digital_converter)* and 
+ADC refers to to *[Analog to Digital Converter](https://en.wikipedia.org/wiki/Analog-to-digital_converter)*. 
+Both of these are pieces of electronics which convert signals from the components of the CMS detector to 
+digital signals which are then stored for later analysis.)
+These files are not a focus of this workshop. 
+* **AOD** stands for *Analysis Object Data*. This was the first stage of data where analysts can really start
+physics analysis when using Run 1 data.
+* **MINIAOD** is a slimmer format of AOD, in use from Run 2 open data on.
+* **NANOAOD**  is slimmed-down of MINIAOD, in conrast to all other formats above, does not require CMS-specific software
+for analysis.
+
+:::::: keypoints
+- The collision data are directed to different datasets based on trigger decisions
+- The Monte Carlo datasets contain a specific simulated physics process
+::::::
