@@ -18,16 +18,18 @@ Use this link if you want to show it.
 
 There might be a tool somewhere, but if doing it by hand:
 
-1. Change questions, objectives and keypoints to
+1. Change questions (note the empty line after items), objectives and keypoints to
    ```
    :::::: questions
    - question 1
    - question 2
+
    ::::::
 
    :::::: objectives
    - objective 1
    - objective 2
+
    ::::::
 
    <!-- EPISODE CONTENT HERE -->
