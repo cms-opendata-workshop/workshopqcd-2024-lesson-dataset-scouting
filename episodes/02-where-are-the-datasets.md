@@ -24,13 +24,14 @@ CMS data.
 :::::: callout
 ## CERN Open Data Portal
 The landing page for the [CERN Open Data Portal](http://opendata.cern.ch/).
-![](figures/portal_screenshot_landing_page.png)
+![](fig/portal_screenshot_landing_page.png)
 <!-- ![](../files/portal_screenshot_landing_page.png)
 This does not work as the deployment looks for it in
 https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-dataset-scouting/files/portal_screenshot_landing_page.png
 move to ../assets/img/ (No) or ../assets/images and see if a miracle happens... NO!
-See https://github.com/carpentries/sandpaper
-
+Under episodes/figures See https://github.com/carpentries/sandpaper, still no success
+From none of these places does it deployed to the gh-pages branch from where the site is served.
+Try episodes/fig as in https://github.com/carpentries/lesson-development-training/tree/main/episodes/fig
  -->
 ::::::::::::::::::::::
 

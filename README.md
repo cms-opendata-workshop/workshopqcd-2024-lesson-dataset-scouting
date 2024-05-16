@@ -65,11 +65,16 @@ There might be a tool somewhere, but if doing it by hand:
    :::::::::::::::::::::::::::::::::::::::::::::::
    ```
 
-## Notes on formatting
+## Notes
+
+### Indents and unexpected code blocks
 
 Note that double-indent (two tabs) or anything more that three spaces produces a code block. That's not necessarily what one would expect.
 Also, in some special cases, in nested lists the second level items might appear as a code block.
+ 
+### Figures
 
+Figures should be located under `episodes/figures`, see https://github.com/carpentries/sandpaper?tab=readme-ov-file#creating-a-lesson
 
 
 ## Configuring the lesson
