@@ -27,17 +27,18 @@ However, [Episode 4: What is in the data files?](https://cms-opendata-workshop.g
 
 
 :::::: checklist
+
 ## You've got a great idea! What's next?
-Suppose you have a great idea that you want to test out with real data! You're going to want
-to know:
+<!-- Suppose you have a great idea that you want to test out with real data! You're going to want
+to know: -->
 
 -[x] What **year** were the data taken that would work best for you?
 -[x] In which **primary dataset** were the data of your interest stored?
 -[x] What **Monte Carlo datasets** are available and appropriate for your studies?
 
-    - This may mean finding simulated physics processes that are **background** to your signal
+    <!-- - This may mean finding simulated physics processes that are **background** to your signal
     - This may mean finding simulated physics processes for your **signal**, if they exist
-    - Possibly just finding simulated datasets where you *know* the answer, allowing you to test your new analysis techniques
+    - Possibly just finding simulated datasets where you *know* the answer, allowing you to test your new analysis techniques -->
 :::::: 
 
 
