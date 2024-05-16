@@ -14,6 +14,53 @@ The `md-outputs` branch shows after setting up the repository. No need to merge 
 The schedule shows only in the "Instructor view": https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-dataset-scouting/instructor/index.html 
 Use this link if you want to show it.
 
+## Updating a lesson using the old template
+
+There might be a tool somewhere, but if doing it by hand:
+
+1. Change questions, objectives and keypoints to
+   ```
+   :::::: questions
+   - question 1
+   - question 2
+   ::::::
+
+   :::::: objectives
+   - objective 1
+   - objective 2
+   ::::::
+
+   <!-- EPISODE CONTENT HERE -->
+
+   :::::: keypoints
+   - keypoint 1
+   - keypoint 2
+   ::::::
+   ```
+2. Find all `{: .callout}`, `{: .challenge}`, `{: .testimonial}` etc tags and and removed the preceeding `> ` for the block and change them to
+
+   ```
+   ::: callout
+   This is a callout block. It contains at least three colons
+   :::
+   ```
+   or
+
+   ```
+   ::::::::::::::::::::::::::::::::::::: challenge
+
+   ## Question
+
+   Q: question
+
+   :::::::::::::::: solution
+
+   A: answer
+
+   :::::::::::::::::::::::::
+   :::::::::::::::::::::::::::::::::::::::::::::::
+   ```
+
 ## Configuring the lesson
 
 Follow the steps below to
