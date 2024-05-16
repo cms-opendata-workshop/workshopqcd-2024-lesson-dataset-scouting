@@ -18,7 +18,7 @@ exercises: 0
 - "A careful understanding of the search options can help with finding what you need"
 ::::::
 
-:::::: callout
+<!-- :::::: callout
 ## Ready to go?
 The 3/4 of this lesson is done entirely in the browser. 
  
@@ -86,7 +86,7 @@ You will find that all the datasets have their DOI listed at the top of their pa
 Can you locate where the DOI is shown for this dataset, Record 6029,
 [DoubleElectron primary dataset in AOD format from Run of 2012 (/DoubleElectron/Run2012C-22Jan2013-v1/AOD)](http://opendata.cern.ch/record/6029)
 
-<!-- > ![](../assets/img/portal_screenshot_DOI_example.png) -->
+Image here from assets/img/portal_screenshot_DOI_example.png
 
 With a DOI, you can create citations to any of these records, for example using a tool like [doi2bib](https://www.doi2bib.org).
 :::::: 
@@ -118,4 +118,4 @@ For all the reasons given above, we encourage you to familiarize yourself with t
 on the portal. With your feedback, we can also work to create better search tools/options and landing
 points. 
 
-This exercise will guide you through the current approach to finding data and Monte Carlo. Let's go!
+This exercise will guide you through the current approach to finding data and Monte Carlo. Let's go! -->
