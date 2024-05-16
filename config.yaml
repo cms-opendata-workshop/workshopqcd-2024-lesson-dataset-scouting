@@ -63,7 +63,7 @@ contact: 'cms-dpoa-coordinators@cern.ch' # FIXME
 episodes: 
 - 01-introduction.md
 - 02-where-are-the-datasets.md
-# - 03-what-data-is-available.md
+- 03-what-data-is-available.md
 # - 04-cli-through-cernopendata-client.md
 # - 05-what-is-in-the-data.md
 # - 06-activity.md
