@@ -37,6 +37,7 @@ There might be a tool somewhere, but if doing it by hand:
    - keypoint 2
    ::::::
    ```
+2. Remove the double quotes of the question, objectives and keypoints.
 2. Find all `{: .callout}`, `{: .challenge}`, `{: .testimonial}` etc tags and and removed the preceeding `> ` for the block and change them to
 
    ```
