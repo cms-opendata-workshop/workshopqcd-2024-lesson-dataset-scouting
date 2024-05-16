@@ -24,11 +24,11 @@ CMS data.
 :::::: callout
 ## CERN Open Data Portal
 The landing page for the [CERN Open Data Portal](http://opendata.cern.ch/).
-![](../assets/img/portal_screenshot_landing_page.png)
+![](../assets/images/portal_screenshot_landing_page.png)
 <!-- ![](../files/portal_screenshot_landing_page.png)
 This does not work as the deployment looks for it in
 https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-dataset-scouting/files/portal_screenshot_landing_page.png
-move to ../assets/img/ and see if a miracle happens...
+move to ../assets/img/ (No) or ../assets/images and see if a miracle happens...
 
  -->
 ::::::::::::::::::::::
