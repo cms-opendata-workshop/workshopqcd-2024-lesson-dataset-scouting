@@ -22,7 +22,7 @@ exercises: 0
 ## Ready to go?
 The 3/4 of this lesson is done entirely in the browser. 
  
-However, [Episode 4: What is in the data files?](https://cms-opendata-workshop.github.io/workshopwhepp-lesson-dataset-scouting/04-what-is-in-the-data/index.html), requires the use of a running CMSSW environment in the CMS open data Docker container. Make sure you have completed the [Docker pre-exercise](https://cms-opendata-workshop.github.io/workshopwhepp-lesson-docker/) if your operating system can run the CMSSW container.
+However, [Episode 4: How to access metadata on the command line?](https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-dataset-scouting/04-cli-through-cernopendata-client.html), requires the use of a command-line tool. It is available as a Docker container or it can be installed with `pip`. Make sure you have completed the [Docker pre-exercise](https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-docker/) and have docker installed..
 ::::::
 
 
@@ -83,14 +83,13 @@ are ever questions about the validity of the data, it allows us to check the
 
 The [Digital Object Identifier (DOI)](https://www.doi.org/) system allows people to assign a unique
 ID to any piece of digital media: a book, a piece of music, a software package, or a dataset. If you want to learn
-more about the DOI process, you can learn more at their [FAQ](https://www.doi.org/faq.html). Assigning
-of DOIs to CERN products is generally handled through [Zenodo](https://zenodo.org/). 
+more about the DOI process, you can learn more at their [FAQ](https://www.doi.org/faq.html).  
 
 :::::: challenge
 ## Challenge!
 You will find that all the datasets have their DOI listed at the top of their page on the portal. 
-Can you locate where the DOI is shown for this dataset, Record 6029,
-[DoubleElectron primary dataset in AOD format from Run of 2012 (/DoubleElectron/Run2012C-22Jan2013-v1/AOD)](http://opendata.cern.ch/record/6029)
+Can you locate where the DOI is shown for this dataset, Record 30521,
+[ DoubleEG primary dataset in NANOAOD format from RunG of 2016 (/DoubleEG/Run2016G-UL2016_MiniAODv2_NanoAODv9-v1/NANOAOD)](https://opendata.cern.ch/record/30521)
 
 Image here from assets/img/portal_screenshot_DOI_example.png
 
@@ -109,7 +108,7 @@ was used during that processing, etc. In this way, we are documenting the
 of our datasets. 
 
 :::::: testimonial
-## From [Wikipeda](https://en.wikipedia.org/wiki/Data_lineage#:~:text=Data%20provenance%20refers%20to%20records,the%20data%20and%20its%20origins.)
+## From  [Wikipedia](https://en.wikipedia.org/wiki/Data_lineage#:~:text=Data%20provenance%20refers%20to%20records,the%20data%20and%20its%20origins.)
 Data lineage includes the data origin, what happens to it and where it moves over time.
 Data lineage gives visibility while greatly simplifying the ability to trace errors back to the root cause in a data analytics process.
 :::::: 
