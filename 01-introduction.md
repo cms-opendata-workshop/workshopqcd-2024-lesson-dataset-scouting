@@ -66,22 +66,48 @@ List with empty lines:
 
 - topic 1
   - topic 1.1
-  
+
     - topic 1.1.1
 - topic 2
 
+List with a comment line:
+
+- topic 1
+  - topic 1.1
+<!-- comment here -->
+    - topic 1.1.1
+- topic 2
 
 List html:
 
 <ul>
-<li>topic 1</li>
+   <li>topic 1</li>
+   <li>topic 2
+      <ul>
+         <li>topic 2.1
+            <ul>
+               <li>topic 2.1.1</li>
+            </ul>
+         </li>
+      </ul>
+   </li>
+   <li>topic 3</li>
+</ul>
+
+A "flat" html list:
+
 <ul>
    <li>topic 1</li>
+   <li>topic 2
    <ul>
-   <li>topic 1.1.1</li>
+   <li>topic 2.1
+   <ul>
+   <li>topic 2.1.1</li>
    </ul>
-</ul>
-<li>topic 2</li>
+   </li>
+   </ul>
+   </li>
+   <li>topic 3</li>
 </ul>
 
 :::::: checklist
@@ -95,11 +121,12 @@ to know:
 - [x] In which **primary dataset** were the data of your interest stored?
 - [x] What **Monte Carlo datasets** are available and appropriate for your studies?
 
-:::::: 
+- This may mean
+   - finding simulated physics processes that are **background** to your signal
+   - finding simulated physics processes for your **signal**, if they exist
+   - possibly just finding simulated datasets where you *know* the answer, allowing you to test your new analysis techniques.
 
-<!-- - This may mean finding simulated physics processes that are **background** to your signal
-- This may mean finding simulated physics processes for your **signal**, if they exist
-- Possibly just finding simulated datasets where you *know* the answer, allowing you to test your new analysis techniques -->
+:::::: 
 
 In this lesson, we'll walk through the process of finding out what data and 
 Monte Carlo are available to you, how to find them, and how to examine what 
