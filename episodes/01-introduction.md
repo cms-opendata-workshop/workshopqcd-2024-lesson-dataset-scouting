@@ -29,8 +29,10 @@ However, [Episode 4: What is in the data files?](https://cms-opendata-workshop.g
 
 ## Example checklist
 
-- [x] topic one
-- [x] topic two
+Can any text go here?
+
+- [x] topic **one**
+- [x] topic two?
 - [x] topic three
 
 ::::::::::::::::::::::::::::
