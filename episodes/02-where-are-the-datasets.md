@@ -28,8 +28,8 @@ The landing page for the [CERN Open Data Portal](http://opendata.cern.ch/).
 ::::::::::::::::::::::
 
 :::::: prereq
-> ## Make a selection!
-> Find the CMS link under **Focus on** and click on it. 
+## Make a selection!
+Find the CMS link under **Focus on** and click on it. 
 ::::::::::::::::::::::
 
 
