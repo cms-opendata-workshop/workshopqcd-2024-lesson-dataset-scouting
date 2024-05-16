@@ -29,7 +29,8 @@ However, [Episode 4: What is in the data files?](https://cms-opendata-workshop.g
 
 ## Example checklist
 
-Can any text go here?
+Suppose you have a great idea that you want to test out with real data! You're going to want
+to know:
 
 - [x] topic **one**
 - [x] topic two?
@@ -42,6 +43,10 @@ Example indentation:
    this indented with tab
 
       this is indented x2
+
+  this is two spaces
+
+    this is four spaces
 
    this is three spaces
 
@@ -58,11 +63,11 @@ to know:
 -[x] In which **primary dataset** were the data of your interest stored?
 -[x] What **Monte Carlo datasets** are available and appropriate for your studies?
 
+:::::: 
+
 <!-- - This may mean finding simulated physics processes that are **background** to your signal
 - This may mean finding simulated physics processes for your **signal**, if they exist
 - Possibly just finding simulated datasets where you *know* the answer, allowing you to test your new analysis techniques -->
-:::::: 
-
 
 In this lesson, we'll walk through the process of finding out what data and 
 Monte Carlo are available to you, how to find them, and how to examine what 
