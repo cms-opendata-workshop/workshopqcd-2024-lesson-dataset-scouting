@@ -56,19 +56,20 @@ List markdown:
 
 - topic 1
   - topic 1.1
+    - topic 1.1.1
 - topic 2
 
 List html:
 
 <ul>
-    <li>List item one</li>
-    <li>List item two with subitems:
-        <ul>
-            <li>Subitem 1</li>
-            <li>Subitem 2</li>
-        </ul>
-    </li>
-    <li>Final list item</li>
+<li>topic 1</li>
+<ul>
+   <li>topic 1</li>
+   <ul>
+   <li>topic 1.1.1</li>
+   </ul>
+</ul>
+<li>topic 2</li>
 </ul>
 
 :::::: checklist
