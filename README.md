@@ -68,7 +68,7 @@ There might be a tool somewhere, but if doing it by hand:
 ## Notes on formatting
 
 Note that double-indent (two tabs) or anything more that three spaces produces a code block. That's not necessarily what one would expect.
-Also, in nested lists the second level items might appear as a code block if there are empty lines.
+Also, in nested lists the second level items might appear as a code block if there are some commented lines in between.
 
 
 
