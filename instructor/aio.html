@@ -302,7 +302,138 @@ what you need</li>
 </ul>
 </div>
 </div>
-</div></section>
+</div>
+<div id="ready-to-go" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="ready-to-go" class="callout-inner">
+<h3 class="callout-title">Ready to go?<a class="anchor" aria-label="anchor" href="#ready-to-go"></a>
+</h3>
+<div class="callout-content">
+<p>The 3/4 of this lesson is done entirely in the browser.</p>
+<p>However, <a href="https://cms-opendata-workshop.github.io/workshopwhepp-lesson-dataset-scouting/04-what-is-in-the-data/index.html" class="external-link">Episode
+4: What is in the data files?</a>, requires the use of a running CMSSW
+environment in the CMS open data Docker container. Make sure you have
+completed the <a href="https://cms-opendata-workshop.github.io/workshopwhepp-lesson-docker/" class="external-link">Docker
+pre-exercise</a> if your operating system can run the CMSSW
+container.</p>
+</div>
+</div>
+</div>
+<p>In this lesson, we’ll walk through the process of finding out what
+data and Monte Carlo are available to you, how to find them, and how to
+examine what data are in the individual data files.</p>
+<div id="what-is-a-monte-carlo-dataset" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="what-is-a-monte-carlo-dataset" class="callout-inner">
+<h3 class="callout-title">What is a Monte Carlo dataset?<a class="anchor" aria-label="anchor" href="#what-is-a-monte-carlo-dataset"></a>
+</h3>
+<div class="callout-content">
+<p>You’ll often hear about physicists using <em>Monte Carlo data</em> or
+sometimes just referring to <em>Monte Carlo</em>. In both cases, we are
+referring to <em>simulations</em> of different physics processes, which
+then mimics how the particles would move through the CMS detector and
+how they might be affected (on average) as they pass through the
+material. This data is then processed just like the “real” data
+(referred to as <em>collider data</em>).</p>
+<p>In this way, the analysts can see how the detector records different
+physics processes and best understand how these processes “look” when we
+analyze the data. This better helps us understand both the signal that
+we are looking for and the backgrounds which might hide what we are
+looking for.</p>
+</div>
+</div>
+</div>
+<p>First of all, let’s understand how the data are stored and why we
+need certain tools to access them.</p>
+<section id="the-cern-open-data-portal"><h2 class="section-heading">The CERN Open Data Portal<a class="anchor" aria-label="anchor" href="#the-cern-open-data-portal"></a>
+</h2>
+<hr class="half-width">
+<p>In some of the earliest discussions about making HEP data publicly
+available there were many concerns about people using and analyzing
+“other people’s” data. The concern centered around well-meaning
+scientists improperly analyzing data and coming up with incorrect
+conclusions.</p>
+<p>While no system is perfect, one way to guard against this is to only
+release well-understood, well-calibrated datasets and to make sure open
+data analysts <em>only</em> use these datasets. These datasets are given
+a <a href="https://www.doi.org/" class="external-link">Digital Object Identifier (DOI)</a>
+code for tracking. And if there are ever questions about the validity of
+the data, it allows us to check the <a href="https://en.wikipedia.org/wiki/Data_lineage#:~:text=Data%20provenance%20refers%20to%20records,the%20data%20and%20its%20origins." class="external-link">data
+provenance</a>.</p>
+</section><section id="doi"><h2 class="section-heading">DOI<a class="anchor" aria-label="anchor" href="#doi"></a>
+</h2>
+<hr class="half-width">
+<p>The <a href="https://www.doi.org/" class="external-link">Digital Object Identifier
+(DOI)</a> system allows people to assign a unique ID to any piece of
+digital media: a book, a piece of music, a software package, or a
+dataset. If you want to learn more about the DOI process, you can learn
+more at their <a href="https://www.doi.org/faq.html" class="external-link">FAQ</a>. Assigning
+of DOIs to CERN products is generally handled through <a href="https://zenodo.org/" class="external-link">Zenodo</a>.</p>
+<div id="challenge" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="challenge" class="callout-inner">
+<h3 class="callout-title">Challenge!<a class="anchor" aria-label="anchor" href="#challenge"></a>
+</h3>
+<div class="callout-content">
+<p>You will find that all the datasets have their DOI listed at the top
+of their page on the portal. Can you locate where the DOI is shown for
+this dataset, Record 6029, <a href="http://opendata.cern.ch/record/6029" class="external-link">DoubleElectron primary
+dataset in AOD format from Run of 2012
+(/DoubleElectron/Run2012C-22Jan2013-v1/AOD)</a></p>
+<p>Image here from assets/img/portal_screenshot_DOI_example.png</p>
+<p>With a DOI, you can create citations to any of these records, for
+example using a tool like <a href="https://www.doi2bib.org" class="external-link">doi2bib</a>.</p>
+</div>
+</div>
+</div>
+</section><section id="provenance"><h2 class="section-heading">Provenance<a class="anchor" aria-label="anchor" href="#provenance"></a>
+</h2>
+<hr class="half-width">
+<p>You will hear experimentalists refer to the “<em>provenance</em>” of
+a dataset. From the <a href="https://dictionary.cambridge.org/us/dictionary/english/provenance" class="external-link">Cambridge
+dictionary</a>, provenance refers to “<em>the place of origin of
+something</em>”. The way we use it, we are referring to how we keep
+track of the history of how a dataset was processed: what version of the
+software was used for reconstruction, what period of calibrations was
+used during that processing, etc. In this way, we are documenting the <a href="https://en.wikipedia.org/wiki/Data_lineage#:~:text=Data%20provenance%20refers%20to%20records,the%20data%20and%20its%20origins." class="external-link">data
+lineage</a> of our datasets.</p>
+<div id="from-wikipeda" class="callout testimonial">
+<div class="callout-square">
+<i class="callout-icon" data-feather="heart"></i>
+</div>
+<div id="from-wikipeda" class="callout-inner">
+<h3 class="callout-title">From<a href="https://en.wikipedia.org/wiki/Data_lineage#:~:text=Data%20provenance%20refers%20to%20records,the%20data%20and%20its%20origins." class="external-link">Wikipeda</a><a class="anchor" aria-label="anchor" href="#from-wikipeda"></a>
+</h3>
+<div class="callout-content">
+<p>Data lineage includes the data origin, what happens to it and where
+it moves over time. Data lineage gives visibility while greatly
+simplifying the ability to trace errors back to the root cause in a data
+analytics process.</p>
+</div>
+</div>
+</div>
+<p>Provenance is an an important part of our data quality checks and
+another reason we want to make sure you are using only vetted and
+calibrated data.</p>
+</section><section id="this-lesson"><h2 class="section-heading">This lesson<a class="anchor" aria-label="anchor" href="#this-lesson"></a>
+</h2>
+<hr class="half-width">
+<p>For all the reasons given above, we encourage you to familiarize
+yourself with the search features and options on the portal. With your
+feedback, we can also work to create better search tools/options and
+landing points.</p>
+<p>This exercise will guide you through the current approach to finding
+data and Monte Carlo. Let’s go! <!-- 
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use. 
+ --></p>
+</section></section>
 </div>
     </main>
 </div>
