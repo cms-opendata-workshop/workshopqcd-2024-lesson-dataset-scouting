@@ -8,17 +8,20 @@ exercises: 0
 :::::: questions
 - What is the point of these exercises?
 - How do I find the data I want to work with?
+
 ::::::::::::::::::::::
 
 :::::: objectives
 - To understand why we start with the Open Data Portal
 - To understand the basics of how the datasets are divided up
+
 ::::::::::::::::::::::
 
 
 :::::: keypoints
 - Finding the data is non-trivial, but all the information is on the portal
 - A careful understanding of the search options can help with finding what you need
+
 ::::::::::::::::::::::
 
 <!-- :::::: callout
