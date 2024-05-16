@@ -40,7 +40,8 @@ There might be a tool somewhere, but if doing it by hand:
    ::::::
    ```
 2. Remove the double quotes of the question, objectives and keypoints.
-2. Find all `{: .callout}`, `{: .challenge}`, `{: .testimonial}` etc tags and and removed the preceeding `> ` for the block and change them to
+3. Make sure that keypoints are at the end of the text.
+4. Find all `{: .callout}`, `{: .challenge}`, `{: .testimonial}` etc tags and and remove the preceeding `> ` for the block and change them to
 
    ```
    ::: callout
