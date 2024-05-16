@@ -725,8 +725,9 @@ them and see if we can break down these names.</p>
 </h3>
 <div class="callout-content">
 <p>Some samples from the 2016 collision data</p>
-<p>[/DoubleEG/Run2016G-UL2016_MiniAODv2-v1/MINIAOD]](<a href="http://opendata.cern.ch/record/30504" class="external-link uri">http://opendata.cern.ch/record/30504</a>) <img src="fig/portal_screenshot_cms_2016_doubleeg_miniaod.png" class="figure"><a href="http://opendata.cern.ch/record/30563" class="external-link">/SingleMuon/Run2016H-UL2016_MiniAODv2_NanoAODv9-v1/NANOAOD</a>
-<img src="fig/portal_screenshot_cms_2016_singlemuon_nanoaod.png" class="figure"></p>
+<p><a href="http://opendata.cern.ch/record/30504" class="external-link">/DoubleEG/Run2016G-UL2016_MiniAODv2-v1/MINIAOD</a></p>
+<figure><img src="fig/portal_screenshot_cms_2016_doubleeg_miniaod.png" class="figure mx-auto d-block"></figure><p><a href="http://opendata.cern.ch/record/30563" class="external-link">/SingleMuon/Run2016H-UL2016_MiniAODv2_NanoAODv9-v1/NANOAOD</a></p>
+<figure><img src="fig/portal_screenshot_cms_2016_singlemuon_nanoaod.png" class="figure mx-auto d-block"></figure>
 </div>
 </div>
 </div>
@@ -764,20 +765,96 @@ releases vetted data. If you were a CMS analyst working on the data as
 it was being processed, you might have to shift your analysis to a
 different dataset once all calibrations were completed.</p>
 <p><strong>Data format</strong></p>
-<p>CMS data are stored in different formats: * <strong>RAW</strong>
-files contain information directly from the detector in the form of hits
-from the TDCs/ADCs. (TDC refers to to <em><a href="https://en.wikipedia.org/wiki/Time-to-digital_converter" class="external-link">Time to
+<p>CMS data are stored in different formats:</p>
+<ul>
+<li>
+<strong>RAW</strong> files contain information directly from the
+detector in the form of hits from the TDCs/ADCs. (TDC refers to to
+<em><a href="https://en.wikipedia.org/wiki/Time-to-digital_converter" class="external-link">Time to
 Digital Converter</a></em> and ADC refers to to <em><a href="https://en.wikipedia.org/wiki/Analog-to-digital_converter" class="external-link">Analog
 to Digital Converter</a></em>. Both of these are pieces of electronics
 which convert signals from the components of the CMS detector to digital
 signals which are then stored for later analysis.) These files are not a
-focus of this workshop. * <strong>AOD</strong> stands for <em>Analysis
-Object Data</em>. This was the first stage of data where analysts can
-really start physics analysis when using Run 1 data. *
-<strong>MINIAOD</strong> is a slimmer format of AOD, in use from Run 2
-open data on. * <strong>NANOAOD</strong> is slimmed-down of MINIAOD, in
+focus of this workshop.</li>
+<li>
+<strong>AOD</strong> stands for <em>Analysis Object Data</em>. This
+was the first stage of data where analysts can really start physics
+analysis when using Run 1 data.</li>
+<li>
+<strong>MINIAOD</strong> is a slimmer format of AOD, in use in CMS
+from Run 2 data on.</li>
+<li>
+<strong>NANOAOD</strong> is slimmed-down version of MINIAOD, and, in
 conrast to all other formats above, does not require CMS-specific
-software for analysis.</p>
+software for analysis.</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="further-information">Further information<a class="anchor" aria-label="anchor" href="#further-information"></a>
+</h3>
+<p>If you click on the link to any of these datasets, you will find even
+more information, including</p>
+<ul>
+<li>The size of the dataset</li>
+<li>Information on the what is the recommended software release to
+analyze this dataset</li>
+<li>Information on the available software containers</li>
+<li>How were the data selected including the details of the trigger
+selection criteria. <!-- More on this in a later lesson. -->
+</li>
+<li>Validation information</li>
+<li>A list of all the individual ROOT files in which this dataset is
+stored</li>
+</ul>
+<p>There are multiple text files that contain the paths to these ROOT
+files. If we click on any one of them, we see something like this.</p>
+<div id="cern-open-data-portal---cms-dataset-file-isting" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="cern-open-data-portal---cms-dataset-file-isting" class="callout-inner">
+<h3 class="callout-title">CERN Open Data Portal - CMS dataset file
+isting<a class="anchor" aria-label="anchor" href="#cern-open-data-portal---cms-dataset-file-isting"></a>
+</h3>
+<div class="callout-content">
+<p>Sample listing of some of the ROOT files in the <a href="https://opendata.cern.ch/record/30563/files/CMS_Run2016H_SingleMuon_NANOAOD_UL2016_MiniAODv2_NanoAODv9-v1_130000_file_index.txt" class="external-link">/SingleMuon/Run2016H-UL2016_MiniAODv2_NanoAODv9-v1/NANOAOD</a>
+dataset.</p>
+<figure><img src="assets/img/portal_screenshot_search_bar_collision_single_mu_ROOT_files.png" class="figure mx-auto d-block"></figure>
+</div>
+</div>
+</div>
+<p>The prepended <code>root:</code> is because of how these files are
+accessed. We’ll use these directory paths when we go to inspect some of
+these files. The grouping of the files in separate lists comes from the
+reprocessing computing step and has no particular meaning.</p>
+</div>
+</section><section id="monte-carlo"><h2 class="section-heading">Monte Carlo<a class="anchor" aria-label="anchor" href="#monte-carlo"></a>
+</h2>
+<hr class="half-width">
+<p>We can go through a similar exercise with the Monte Carlo data. One
+major difference is that the Monte Carlo are not broken up by trigger.
+Instead, when you analyze the Monte Carlo, you will apply the trigger to
+the data to simulate what happens in the real data. <!-- You will learn
+more about this in the upcoming trigger exercise.  --></p>
+<p>For now, let’s look at some of the Monte Carlo datasets that are
+available to you.</p>
+<div id="make-some-selections-but-first-make-some-unselections" class="callout prereq">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check"></i>
+</div>
+<div id="make-some-selections-but-first-make-some-unselections" class="callout-inner">
+<h3 class="callout-title">Make some selections! But first make some
+unselections!<a class="anchor" aria-label="anchor" href="#make-some-selections-but-first-make-some-unselections"></a>
+</h3>
+<div class="callout-content">
+<p>Unselect everything except for <strong>2016</strong>,
+<strong>CMS</strong>, <strong>Dataset</strong>, and then select
+<strong>Simulated</strong> (under <strong>Dataset</strong>).</p>
+<p>Scroll down to see the options under <strong>Category</strong> in the
+left bar.</p>
+</div>
+</div>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -799,7 +876,6 @@ process</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
  -->
-</div>
 </section></section>
 </div>
     </main>
