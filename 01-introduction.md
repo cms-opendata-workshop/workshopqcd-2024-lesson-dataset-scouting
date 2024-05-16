@@ -44,17 +44,32 @@ to know:
 
 Example indentation:
 
-   this indented with tab
-
-      this is indented x2
 
   this is two spaces
 
     this is four spaces
 
-   this is three spaces
-
       this is with 6 spaces
+
+
+List markdown:
+
+- topic 1
+  - topic 1.1
+- topic 2
+
+List html:
+
+<ul>
+    <li>List item one</li>
+    <li>List item two with subitems:
+        <ul>
+            <li>Subitem 1</li>
+            <li>Subitem 2</li>
+        </ul>
+    </li>
+    <li>Final list item</li>
+</ul>
 
 :::::: checklist
 
