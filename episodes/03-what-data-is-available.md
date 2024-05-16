@@ -62,9 +62,12 @@ Let's take a look at two of them and see if we can break down these names.
 ## CERN Open Data Portal - CMS datasets
 Some samples from the 2016 collision data
 
-[/DoubleEG/Run2016G-UL2016_MiniAODv2-v1/MINIAOD]](http://opendata.cern.ch/record/30504)
+[/DoubleEG/Run2016G-UL2016_MiniAODv2-v1/MINIAOD](http://opendata.cern.ch/record/30504)
+
 ![](fig/portal_screenshot_cms_2016_doubleeg_miniaod.png)
+
 [/SingleMuon/Run2016H-UL2016_MiniAODv2_NanoAODv9-v1/NANOAOD](http://opendata.cern.ch/record/30563)
+
 ![](fig/portal_screenshot_cms_2016_singlemuon_nanoaod.png)
 ::::::::::::
 
@@ -96,6 +99,7 @@ you might have to shift your analysis to a different dataset once all calibratio
 **Data format**
 
 CMS data are stored in different formats:
+
 * **RAW** files contain information directly from the detector in the form of hits from the TDCs/ADCs. 
 (TDC refers to to *[Time to Digital Converter](https://en.wikipedia.org/wiki/Time-to-digital_converter)* and 
 ADC refers to to *[Analog to Digital Converter](https://en.wikipedia.org/wiki/Analog-to-digital_converter)*. 
@@ -104,9 +108,54 @@ digital signals which are then stored for later analysis.)
 These files are not a focus of this workshop. 
 * **AOD** stands for *Analysis Object Data*. This was the first stage of data where analysts can really start
 physics analysis when using Run 1 data.
-* **MINIAOD** is a slimmer format of AOD, in use from Run 2 open data on.
-* **NANOAOD**  is slimmed-down of MINIAOD, in conrast to all other formats above, does not require CMS-specific software
+* **MINIAOD** is a slimmer format of AOD, in use in CMS from Run 2 data on.
+* **NANOAOD**  is slimmed-down version of MINIAOD, and, in conrast to all other formats above, does not require CMS-specific software
 for analysis.
+
+### Further information
+
+If you click on the link to any of these datasets, you will find even more information, including
+
+* The size of the dataset
+* Information on the what is the recommended software release to analyze this dataset
+* Information on the available software containers
+* How were the data selected including the details of the trigger selection criteria. <!-- More on this in a later lesson. -->
+* Validation information
+* A list of all the individual ROOT files in which this dataset is stored
+
+There are multiple text files that contain the paths to these ROOT files. If we click on
+any one of them, we see something like this. 
+
+:::::: callout
+
+## CERN Open Data Portal - CMS dataset file isting
+
+Sample listing of some of the ROOT files in the 
+[/SingleMuon/Run2016H-UL2016_MiniAODv2_NanoAODv9-v1/NANOAOD](https://opendata.cern.ch/record/30563/files/CMS_Run2016H_SingleMuon_NANOAOD_UL2016_MiniAODv2_NanoAODv9-v1_130000_file_index.txt)
+dataset.
+
+![](../assets/img/portal_screenshot_search_bar_collision_single_mu_ROOT_files.png)
+::::::::::::
+
+The prepended `root:` is because of how these files are accessed. We'll use these directory
+paths when we go to inspect some of these files. The grouping of the files in separate lists comes
+from the reprocessing computing step and has no particular meaning.
+
+## Monte Carlo
+
+We can go through a similar exercise with the Monte Carlo data. One major difference is that
+the Monte Carlo are not broken up by trigger. Instead, when you analyze the Monte Carlo, you will
+apply the trigger to the data to simulate what happens in the real data. <!-- You will learn
+more about this in the upcoming trigger exercise.  -->
+
+For now, let's look at some of the Monte Carlo datasets that are available to you. 
+
+:::::: prereq
+## Make some selections! But first make some unselections!
+Unselect everything except for **2016**, **CMS**, **Dataset**, and then select **Simulated** (under **Dataset**).  
+
+Scroll down to see the options under **Category** in the left bar. 
+::::::::::::
 
 :::::: keypoints
 - The collision data are directed to different datasets based on trigger decisions
