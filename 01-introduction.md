@@ -25,90 +25,6 @@ The 3/4 of this lesson is done entirely in the browser.
 However, [Episode 4: What is in the data files?](https://cms-opendata-workshop.github.io/workshopwhepp-lesson-dataset-scouting/04-what-is-in-the-data/index.html), requires the use of a running CMSSW environment in the CMS open data Docker container. Make sure you have completed the [Docker pre-exercise](https://cms-opendata-workshop.github.io/workshopwhepp-lesson-docker/) if your operating system can run the CMSSW container.
 ::::::
 
-:::::::::::::::::: checklist
-
-## Example checklist
-
-Suppose you have a great idea that you want to test out with real data! You're going to want
-to know:
-
-- [x] topic **one**
-- [x] topic two?
-- [x] topic three
-
-Another list here:
-
-- topic 1
-  - topic 1.1
-    - topic 1.1.1
-- topic 2
-
-::::::::::::::::::::::::::::
-
-Example indentation:
-
-
-  this is two spaces
-
-    this is four spaces
-
-      this is with 6 spaces
-
-
-List markdown:
-
-- topic 1
-  - topic 1.1
-    - topic 1.1.1
-- topic 2
-
-List with empty lines:
-
-- topic 1
-  - topic 1.1
-
-    - topic 1.1.1
-- topic 2
-
-List with a comment line:
-
-- topic 1
-  - topic 1.1
-<!-- comment here -->
-    - topic 1.1.1
-- topic 2
-
-List html:
-
-<ul>
-   <li>topic 1</li>
-   <li>topic 2
-      <ul>
-         <li>topic 2.1
-            <ul>
-               <li>topic 2.1.1</li>
-            </ul>
-         </li>
-      </ul>
-   </li>
-   <li>topic 3</li>
-</ul>
-
-A "flat" html list:
-
-<ul>
-   <li>topic 1</li>
-   <li>topic 2
-   <ul>
-   <li>topic 2.1
-   <ul>
-   <li>topic 2.1.1</li>
-   </ul>
-   </li>
-   </ul>
-   </li>
-   <li>topic 3</li>
-</ul>
 
 :::::: checklist
 
@@ -121,7 +37,7 @@ to know:
 - [x] In which **primary dataset** were the data of your interest stored?
 - [x] What **Monte Carlo datasets** are available and appropriate for your studies?
 
-- This may mean
+   This may mean
    - finding simulated physics processes that are **background** to your signal
    - finding simulated physics processes for your **signal**, if they exist
    - possibly just finding simulated datasets where you *know* the answer, allowing you to test your new analysis techniques.
