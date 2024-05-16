@@ -18,12 +18,6 @@ exercises: 0
 ::::::::::::::::::::::
 
 
-:::::: keypoints
-- Finding the data is non-trivial, but all the information is on the portal
-- A careful understanding of the search options can help with finding what you need
-
-::::::::::::::::::::::
-
 :::::: callout
 ## Ready to go?
 The 3/4 of this lesson is done entirely in the browser. 
@@ -31,19 +25,19 @@ The 3/4 of this lesson is done entirely in the browser.
 However, [Episode 4: What is in the data files?](https://cms-opendata-workshop.github.io/workshopwhepp-lesson-dataset-scouting/04-what-is-in-the-data/index.html), requires the use of a running CMSSW environment in the CMS open data Docker container. Make sure you have completed the [Docker pre-exercise](https://cms-opendata-workshop.github.io/workshopwhepp-lesson-docker/) if your operating system can run the CMSSW container.
 ::::::
 
-<!-- 
+
 :::::: checklist
 ## You've got a great idea! What's next?
 Suppose you have a great idea that you want to test out with real data! You're going to want
 to know:
-* What **year** were the data taken that would work best for you?
-* In which **primary dataset** were the data of your interest stored?
-* What **Monte Carlo datasets** are available and appropriate for your studies?
-    * This may mean finding simulated physics processes that are **background** to your signal
-    * This may mean finding simulated physics processes for your **signal**, if they exist
-    * Possibly just finding simulated datasets where you *know* the answer, allowing you to test your new analysis techniques
+-[x] What **year** were the data taken that would work best for you?
+-[x] In which **primary dataset** were the data of your interest stored?
+-[x] What **Monte Carlo datasets** are available and appropriate for your studies?
+    - This may mean finding simulated physics processes that are **background** to your signal
+    - This may mean finding simulated physics processes for your **signal**, if they exist
+    - Possibly just finding simulated datasets where you *know* the answer, allowing you to test your new analysis techniques
 :::::: 
--->
+
 
 In this lesson, we'll walk through the process of finding out what data and 
 Monte Carlo are available to you, how to find them, and how to examine what 
@@ -126,3 +120,9 @@ on the portal. With your feedback, we can also work to create better search tool
 points. 
 
 This exercise will guide you through the current approach to finding data and Monte Carlo. Let's go!
+
+:::::: keypoints
+- Finding the data is non-trivial, but all the information is on the portal
+- A careful understanding of the search options can help with finding what you need
+
+::::::::::::::::::::::
