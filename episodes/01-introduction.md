@@ -35,10 +35,13 @@ to know:
 - [x] topic **one**
 - [x] topic two?
 - [x] topic three
-- this is without checkmark
- - this is with 1 space
-  - this is with 2 spaces
-   - this is with 3 spaces
+
+Another list here:
+
+- topic 1
+  - topic 1.1
+    - topic 1.1.1
+- topic 2
 
 ::::::::::::::::::::::::::::
 
@@ -58,6 +61,15 @@ List markdown:
   - topic 1.1
     - topic 1.1.1
 - topic 2
+
+List with empty lines:
+
+- topic 1
+  - topic 1.1
+  
+    - topic 1.1.1
+- topic 2
+
 
 List html:
 
