@@ -25,14 +25,7 @@ CMS data.
 ## CERN Open Data Portal
 The landing page for the [CERN Open Data Portal](http://opendata.cern.ch/).
 ![](fig/portal_screenshot_landing_page.png)
-<!-- ![](../files/portal_screenshot_landing_page.png)
-This does not work as the deployment looks for it in
-https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-dataset-scouting/files/portal_screenshot_landing_page.png
-move to ../assets/img/ (No) or ../assets/images and see if a miracle happens... NO!
-Under episodes/figures See https://github.com/carpentries/sandpaper, still no success
-From none of these places does it deployed to the gh-pages branch from where the site is served.
-Try episodes/fig as in https://github.com/carpentries/lesson-development-training/tree/main/episodes/fig
- -->
+
 ::::::::::::::::::::::
 
 :::::: prereq
@@ -40,6 +33,28 @@ Try episodes/fig as in https://github.com/carpentries/lesson-development-trainin
 Find the CMS link under **Focus on** and click on it. 
 ::::::::::::::::::::::
 
+## CMS-specific datasets
+
+The figure below shows the website after we have chosen the CMS data. Note the left-hand
+sidebar that allows us to filter our selections. Let's see what's there. 
+
+
+:::::: callout
+## CERN Open Data Portal - CMS data
+The first pass to filter on CMS data
+![](fig/portal_screenshot_cms_selected.png)
+::::::::::::::::::::::
+
+At first glance we can see a few things. First, there is an option to select only **Dataset** rather 
+than documentation or software or similar materials. Great! Going forward we'll select **Dataset**. 
+
+Next, scrolling down to see the search options in the left bar, we see that there are a lot of entries for data from **2010**, **2011**, **2012**, **2015**, and **2016**, the 7 TeV, 8 TeV and 13 TeV running periods. 
+We'll be working with 2016 data for these exercises. 
+
+:::::: prereq
+## Make a selection!
+For the next episode, let's select **Dataset** and **2016**.  
+:::::: prereq
 
 :::::: keypoints
 - Use the filter selections in the left-hand sidebar of the CERN Open Data Portal to find datasets.

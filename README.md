@@ -14,7 +14,7 @@ The `md-outputs` branch shows after setting up the repository. No need to merge 
 The schedule shows only in the "Instructor view": https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-dataset-scouting/instructor/index.html 
 Use this link if you want to show it.
 
-## Updating a lesson using the old template
+## Updating an old lesson to the new template
 
 There might be a tool somewhere, but if doing it by hand:
 
@@ -67,14 +67,26 @@ There might be a tool somewhere, but if doing it by hand:
 
 ## Notes
 
+### Documentation
+
+See e.g.
+
+- https://carpentries.github.io/lesson-development-training/
+- https://carpentries.github.io/sandpaper-docs/index.html
+
+
 ### Indents and unexpected code blocks
 
 Note that double-indent (two tabs) or anything more that three spaces produces a code block. That's not necessarily what one would expect.
-Also, in some special cases, in nested lists the second level items might appear as a code block.
+Also, in some special cases, in nested lists, the second level items might appear as a code block.
  
 ### Figures
 
-Figures should be located under `episodes/figures`, see https://github.com/carpentries/sandpaper?tab=readme-ov-file#creating-a-lesson
+Figures should be located under `episodes/fig`, and included, for example, with
+
+```
+![](fig/portal_screenshot_landing_page.png)
+```
 
 
 ## Configuring the lesson
