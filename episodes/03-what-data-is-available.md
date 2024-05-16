@@ -134,12 +134,12 @@ Sample listing of some of the ROOT files in the
 [/SingleMuon/Run2016H-UL2016_MiniAODv2_NanoAODv9-v1/NANOAOD](https://opendata.cern.ch/record/30563/files/CMS_Run2016H_SingleMuon_NANOAOD_UL2016_MiniAODv2_NanoAODv9-v1_130000_file_index.txt)
 dataset.
 
-![](../assets/img/portal_screenshot_search_bar_collision_single_mu_ROOT_files.png)
+![](fig/portal_screenshot_cms_2016_singlemuon_nanoaod_dataset_listing.png)
 ::::::::::::
 
 The prepended `root:` is because of how these files are accessed. We'll use these directory
 paths when we go to inspect some of these files. The grouping of the files in separate lists comes
-from the reprocessing computing step and has no particular meaning.
+from the reprocessing computing operations and has no particular meaning.
 
 ## Monte Carlo
 
@@ -156,6 +156,78 @@ Unselect everything except for **2016**, **CMS**, **Dataset**, and then select *
 
 Scroll down to see the options under **Category** in the left bar. 
 ::::::::::::
+
+:::::: callout
+## CERN Open Data Portal - CMS Monte Carlo datasets
+Monte Carlo dataset category search options
+
+![](fig/portal_screenshot_cms_2016_mc_categories.png)
+::::::::::::
+
+
+There are a lot of Monte Carlo samples! It's up to you to determine which ones 
+might contribute to your background. The names try to give you some sense of
+the primary process, subsequent decays, the beam energy 
+and specific simulation software (e.g. Pythia), but if you have questions, 
+reach out to the organizers.
+<!-- through 
+[Mattermost](https://mattermost.web.cern.ch/cmsodws2022/channels/town-square). -->
+
+As with the collision data, here are three (3) parts to the names, separated by `/'. 
+
+Let's look at one of them:
+[/DYToMuMu_M-120To200_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL16NanoAODv9-106X_mcRun2_asymptotic_v17-v1/NANOAODSIM](https://opendata.cern.ch/record/35751)
+
+**Physics process/Monte Carlo sample**
+
+*DYToMuMu_M-120To200_TuneCP5_13TeV-powheg-pythia8* is hard to understand at first glance, but
+if we take our time we might be able to intuit some of the meaning. This appears
+to simulate a [Drell-Yan process](https://en.wikipedia.org/wiki/Drell%E2%80%93Yan_process) 
+in which two quarks interact to produce a virtual photon/Z boson which then couples to 
+two leptons. The *M-120To200* refers to a selection that has been imposed requiring the mass of the di-lepton 
+pair to be between 120 and 200 50 GeV/c^2. *TuneCP5* refers to the the set of CMS underlying-event parameters of PYTHIA8 event generator. *13TeV* is the beam energy used in the simulation, 
+the remaining fields tell us what 
+software was used to generate this (*powheg* for event generation and *pythia8* for hadronization).
+
+**Processing and Global tag**
+
+*RunIISummer20UL16NanoAODv9-106X_mcRun2_asymptotic_v17-v1* refers to how and when this Monte Carlo was processed. 
+The details are not so important for you because the open data coordinators have
+taken care to only post vetted data. But it is all part of the data provenance.
+
+**Data format**
+
+The last field refers to the data format and here again there is a slight difference.
+
+* **MINIAODSIM** or **NANOAODSIM** stands for *Mini or Nano Analysis Object Data - Simulation*. This is the same as 
+the **MINIAOD** or **NANOAOD** format used in the collision data, except that there are some extra fields that
+store information about the original, generated 4-vectors at the parton level, as well
+as some other Monte Carlo-specific information. 
+
+One difference is that you will
+want to select the Monte Carlo events that pass certain triggers at the time of your analysis, while
+that selection was already done in the data by the detector hardware/software itself. 
+
+If you click on any of these fields, you can see more details about the samples, similar
+to the collision data. 
+
+## More Monte Carlo samples
+
+If you would like a general idea of what other physics processes have been simulated, you can
+check scroll down the sidebar until you come to **Category**. 
+
+:::::: challenge
+## CERN Open Data Portal - CMS Monte Carlo datasets
+Select some Monte Carlo dataset and see if you can find the generator information in the dataset provenance.
+::::::::::::
+
+You may have to do a bit of poking around to find the dataset that is most appropriate for what
+you want to do, but remember, 
+you can always reach out to the organizers.
+<!-- through 
+[Mattermost](https://mattermost.web.cern.ch/cmsodwswhepp24/channels/town-square). -->
+
+
 
 :::::: keypoints
 - The collision data are directed to different datasets based on trigger decisions
