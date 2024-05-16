@@ -67,7 +67,7 @@ There might be a tool somewhere, but if doing it by hand:
 
 ## Notes on formatting
 
-Note that double-intend (two tabs) produces a code block. Not necessarily what one would expect, e.g. in nested lists the second level items might appear as a code block.
+Note that double-indent (two tabs) or anything more that three spaces produces a code block. That's not necessarily what one would expect, e.g. in nested lists the second level items might appear as a code block.
 
 
 ## Configuring the lesson

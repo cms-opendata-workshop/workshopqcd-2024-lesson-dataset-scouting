@@ -35,6 +35,7 @@ to know:
 - [x] topic **one**
 - [x] topic two?
 - [x] topic three
+- this is without checkmark
 
 ::::::::::::::::::::::::::::
 
@@ -59,9 +60,9 @@ Example indentation:
 Suppose you have a great idea that you want to test out with real data! You're going to want
 to know:
 
--[x] What **year** were the data taken that would work best for you?
--[x] In which **primary dataset** were the data of your interest stored?
--[x] What **Monte Carlo datasets** are available and appropriate for your studies?
+- [x] What **year** were the data taken that would work best for you?
+- [x] In which **primary dataset** were the data of your interest stored?
+- [x] What **Monte Carlo datasets** are available and appropriate for your studies?
 
 :::::: 
 
