@@ -41,7 +41,8 @@ Selecting CMS, Dataset, and 2016.
 ![](fig/portal_screenshot_cms_2016_datasets_selected.png)
 ::::::::::::
 
-When **Dataset** is selected, there are 3 subcategories: 
+When **Dataset** is selected, there are 3 subcategories:
+
 * **Collision** refers to the real data that came off of the CMS detector.
 * **Derived** refers to datasets that have been further processed for some specific purpose, such as outreach
 and education or the [ispy](https://cms-outreach.github.io/ispy/) event display. 
@@ -59,8 +60,7 @@ When you select **Collision** you'll see a lot of datasets with names that may b
 Let's take a look at two of them and see if we can break down these names.
 
 :::::: callout
-## CERN Open Data Portal - CMS datasets
-Some samples from the 2016 collision data
+## CERN Open Data Portal - Sample CMS collision datasets
 
 [/DoubleEG/Run2016G-UL2016_MiniAODv2-v1/MINIAOD](http://opendata.cern.ch/record/30504)
 
@@ -71,7 +71,7 @@ Some samples from the 2016 collision data
 ![](fig/portal_screenshot_cms_2016_singlemuon_nanoaod.png)
 ::::::::::::
 
-There are three (3) parts to the names, separated by `/'. 
+There are three (3) parts to the names, separated by `/`. 
 
 **Dataset name**
 
@@ -173,10 +173,12 @@ reach out to the organizers.
 <!-- through 
 [Mattermost](https://mattermost.web.cern.ch/cmsodws2022/channels/town-square). -->
 
-As with the collision data, here are three (3) parts to the names, separated by `/'. 
+As with the collision data, here are three (3) parts to the names, separated by `/`. 
 
 Let's look at one of them:
 [/DYToMuMu_M-120To200_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL16NanoAODv9-106X_mcRun2_asymptotic_v17-v1/NANOAODSIM](https://opendata.cern.ch/record/35751)
+
+![](fig/portal_screenshot_cms_2016_dytomumu_nanoaod.png)
 
 **Physics process/Monte Carlo sample**
 
@@ -217,8 +219,11 @@ If you would like a general idea of what other physics processes have been simul
 check scroll down the sidebar until you come to **Category**. 
 
 :::::: challenge
-## CERN Open Data Portal - CMS Monte Carlo datasets
-Select some Monte Carlo dataset and see if you can find the generator information in the dataset provenance.
+
+## Challenge: find generator parameters
+
+Select some Monte Carlo datasets and see if you can find the generator information in the dataset provenance.
+
 ::::::::::::
 
 You may have to do a bit of poking around to find the dataset that is most appropriate for what
