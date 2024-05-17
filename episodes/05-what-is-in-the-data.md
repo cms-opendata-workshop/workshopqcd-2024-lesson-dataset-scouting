@@ -30,11 +30,11 @@ Find the variable listings for a collision data record and a Monte Carlo data re
 
 :::::::::::::::: solution
 
-Why the font is bigger here?
+The data records have a "Luminosity" block with some beam related information whereas MC records have a "Runs" block with event generation information.
 
- - The data records have a "Luminosity" block with some beam related information whereas MC records have a "Runs" block with event generation information.
- - The MC records have event generator or simulation information in the "Events" block.
- - The variables of reconstructed objects, such as Muons, are the same for [data](https://opendata.cern.ch/eos/opendata/cms/dataset-semantics/NanoAOD/30563/SingleMuon_doc.html#Muon) and [MC](https://opendata.cern.ch/eos/opendata/cms/dataset-semantics/NanoAODSIM/35751/DYToMuMu_M-120To200_TuneCP5_13TeV-powheg-pythia8_doc.html#Muon).
+The MC records have event generator or simulation information in the "Events" block.
+ 
+The variables of reconstructed objects, such as Muons, are the same for [data](https://opendata.cern.ch/eos/opendata/cms/dataset-semantics/NanoAOD/30563/SingleMuon_doc.html#Muon) and [MC](https://opendata.cern.ch/eos/opendata/cms/dataset-semantics/NanoAODSIM/35751/DYToMuMu_M-120To200_TuneCP5_13TeV-powheg-pythia8_doc.html#Muon).
 
 :::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
@@ -128,7 +128,7 @@ type(pt)
 awkward.highlevel.Array
 ```
 
-Print out some of the value with
+Print out some of the values with
 
 ```python
 print(pt)
@@ -140,6 +140,15 @@ print(pt)
 
 Note that the muon pt array can contain one or more elements, depending on the number of reconstructed muons in the event.
 
+From the [awkward array documentation](https://awkward-array.org/doc/main/user-guide/how-to-filter-num.html#use-ak-num), you can find out hot to choose the events with exactly two reconstructed muons:
+
+```python
+pt[ak.num(pt) == 2]
+```
+
+```output
+<Array [[91.9, 52.7], ... [88.7, 14.2]] type='2713 * var * float32'>
+```
 
 :::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
