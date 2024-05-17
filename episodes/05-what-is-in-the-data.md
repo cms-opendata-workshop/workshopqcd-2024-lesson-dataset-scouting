@@ -30,9 +30,9 @@ Find the variable listings for a collision data record and a Monte Carlo data re
 
 :::::::::::::::: solution
 
-- The data records have a "Luminosity" block with some beam related information whereas MC records have a "Runs" block with event generation information.
-- The MC records have event generator or simulation information in the "Events" block.
-- The variables of reconstructed objects, such as Muon, are the same for [data](https://opendata.cern.ch/eos/opendata/cms/dataset-semantics/NanoAOD/30563/SingleMuon_doc.html#Muon) and [MC](https://opendata.cern.ch/eos/opendata/cms/dataset-semantics/NanoAODSIM/35751/DYToMuMu_M-120To200_TuneCP5_13TeV-powheg-pythia8_doc.html#Muon).
+ - The data records have a "Luminosity" block with some beam related information whereas MC records have a "Runs" block with event generation information.
+ - The MC records have event generator or simulation information in the "Events" block.
+ - The variables of reconstructed objects, such as Muon, are the same for [data](https://opendata.cern.ch/eos/opendata/cms/dataset-semantics/NanoAOD/30563/SingleMuon_doc.html#Muon) and [MC](https://opendata.cern.ch/eos/opendata/cms/dataset-semantics/NanoAODSIM/35751/DYToMuMu_M-120To200_TuneCP5_13TeV-powheg-pythia8_doc.html#Muon).
 
 :::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
@@ -54,8 +54,32 @@ Work through the quick introduction to getting started with CMS NANOAOD Open Dat
 ::::::::::::
 
 
-## Inspect dataset with python tools
+## Inspect a dataset with python tools
 
+This part of the lesson will be done from within the [python tools container](https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-docker/03-docker-for-cms-opendata.html#python-tools-container). You should have it available.
+Open a new jupyter notebook from the jupyterlab tab that the container will open in your browser. Type the commands in code cells of the notebook.
+
+First, import some python libraries:
+
+```python
+import uproot
+import matplotlib.pylab as plt
+import awkward as ak
+import numpy as np
+```
+
+ - [uproot](https://uproot.readthedocs.io/en/latest/index.html) is a python inteface to ROOT
+ - [matplotlib](https://matplotlib.org/) can be used for plotting
+ - [numpy](https://numpy.org/) is a python package for scientific computing
+ - [awkard](https://awkward-array.org/doc/main/) is a python library for variable-size data
+
+
+
+### Print out event content with python tools
+
+
+
+### Plot a variable with python tools
 
 
 :::::: keypoints
