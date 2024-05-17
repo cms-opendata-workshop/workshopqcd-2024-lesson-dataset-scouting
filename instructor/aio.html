@@ -1219,19 +1219,16 @@ Carlo data record. What are the differences? What is the same?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<p>Why the font is bigger here?</p>
-<ul>
-<li>The data records have a “Luminosity” block with some beam related
+<p>The data records have a “Luminosity” block with some beam related
 information whereas MC records have a “Runs” block with event generation
-information.</li>
-<li>The MC records have event generator or simulation information in the
-“Events” block.</li>
-<li>The variables of reconstructed objects, such as Muons, are the same
+information.</p>
+<p>The MC records have event generator or simulation information in the
+“Events” block.</p>
+<p>The variables of reconstructed objects, such as Muons, are the same
 for <a href="https://opendata.cern.ch/eos/opendata/cms/dataset-semantics/NanoAOD/30563/SingleMuon_doc.html#Muon" class="external-link">data</a>
-and <a href="https://opendata.cern.ch/eos/opendata/cms/dataset-semantics/NanoAODSIM/35751/DYToMuMu_M-120To200_TuneCP5_13TeV-powheg-pythia8_doc.html#Muon" class="external-link">MC</a>.</li>
-</ul>
+and <a href="https://opendata.cern.ch/eos/opendata/cms/dataset-semantics/NanoAODSIM/35751/DYToMuMu_M-120To200_TuneCP5_13TeV-powheg-pythia8_doc.html#Muon" class="external-link">MC</a>.</p>
 </div>
 </div>
 </div>
@@ -1350,7 +1347,7 @@ elements. What do you observe?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Find the type with</p>
 <div class="codewrapper sourceCode" id="cb7">
@@ -1363,7 +1360,7 @@ elements. What do you observe?</p>
 </h3>
 <pre class="output" tabindex="0"><code><span><span class="va">awkward.highlevel.Array</span></span></code></pre>
 </div>
-<p>Print out some of the value with</p>
+<p>Print out some of the values with</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1376,6 +1373,19 @@ elements. What do you observe?</p>
 </div>
 <p>Note that the muon pt array can contain one or more elements,
 depending on the number of reconstructed muons in the event.</p>
+<p>From the <a href="https://awkward-array.org/doc/main/user-guide/how-to-filter-num.html#use-ak-num" class="external-link">awkward
+array documentation</a>, you can find out hot to choose the events with
+exactly two reconstructed muons:</p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>pt[ak.num(pt) <span class="op">==</span> <span class="dv">2</span>]</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>&lt;Array [[91.9, 52.7], ... [88.7, 14.2]] type='2713 * var * float32'&gt;</code></pre>
+</div>
 </div>
 </div>
 </div>
