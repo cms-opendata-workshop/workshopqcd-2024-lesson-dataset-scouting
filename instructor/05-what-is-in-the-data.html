@@ -201,7 +201,7 @@
       <div class="accordion-body">
         <ul><li><a href="#nanoaod-variable-list">NANOAOD variable list</a></li>
 <li><a href="#inspect-datasets-with-root">Inspect datasets with ROOT</a></li>
-<li><a href="#inspect-a-dataset-with-python-tools">Inspect a dataset with python tools</a></li>
+<li><a href="#inspect-datasets-with-python-tools">Inspect datasets with python tools</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
         
@@ -308,12 +308,12 @@ software using ROOT or python tools.</p>
 </h2>
 <hr class="half-width"><p>Each NANOAOD dataset has the variable list with a brief description
 attached to the portal record.</p>
-<div id="challenge" class="callout challenge">
+<div id="challenge-variables" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
+<div id="challenge-variables" class="callout-inner">
+<h3 class="callout-title">Challenge: variables<a class="anchor" aria-label="anchor" href="#challenge-variables"></a>
 </h3>
 <div class="callout-content">
 <p>Find the variable listings for a collision data record and a Monte
@@ -326,14 +326,15 @@ Carlo data record. What are the differences? What is the same?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
+<p>Why the font is bigger here?</p>
 <ul><li>The data records have a “Luminosity” block with some beam related
 information whereas MC records have a “Runs” block with event generation
 information.</li>
 <li>The MC records have event generator or simulation information in the
 “Events” block.</li>
-<li>The variables of reconstructed objects, such as Muon, are the same
+<li>The variables of reconstructed objects, such as Muons, are the same
 for <a href="https://opendata.cern.ch/eos/opendata/cms/dataset-semantics/NanoAOD/30563/SingleMuon_doc.html#Muon" class="external-link">data</a>
 and <a href="https://opendata.cern.ch/eos/opendata/cms/dataset-semantics/NanoAODSIM/35751/DYToMuMu_M-120To200_TuneCP5_13TeV-powheg-pythia8_doc.html#Muon" class="external-link">MC</a>.</li>
 </ul></div>
@@ -364,7 +365,7 @@ ROOT</label></li>
 </ul></div>
 </div>
 </div>
-</section><section id="inspect-a-dataset-with-python-tools"><h2 class="section-heading">Inspect a dataset with python tools<a class="anchor" aria-label="anchor" href="#inspect-a-dataset-with-python-tools"></a>
+</section><section id="inspect-datasets-with-python-tools"><h2 class="section-heading">Inspect datasets with python tools<a class="anchor" aria-label="anchor" href="#inspect-datasets-with-python-tools"></a>
 </h2>
 <hr class="half-width"><p>This part of the lesson will be done from within the <a href="https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-docker/03-docker-for-cms-opendata.html#python-tools-container" class="external-link">python
 tools container</a>. You should have it available. Open a new jupyter
@@ -391,8 +392,92 @@ scientific computing</li>
 <li>
 <a href="https://awkward-array.org/doc/main/" class="external-link">awkard</a> is a python
 library for variable-size data</li>
-</ul><div class="section level3">
+</ul><p>Then, open a file from a dataset:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> uproot.<span class="bu">open</span>(<span class="st">"root://eospublic.cern.ch//eos/opendata/cms/Run2016H/SingleMuon/NANOAOD/UL2016_MiniAODv2_NanoAODv9-v1/120000/61FC1E38-F75C-6B44-AD19-A9894155874E.root"</span>)</span></code></pre>
+</div>
+<div class="section level3">
 <h3 id="print-out-event-content-with-python-tools">Print out event content with python tools<a class="anchor" aria-label="anchor" href="#print-out-event-content-with-python-tools"></a></h3>
+<p>You can check the content blocks of the file with</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="bu">file</span>.classnames()</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>{'tag;1': 'TObjString',
+ 'Events;1': 'TTree',
+ 'LuminosityBlocks;1': 'TTree',
+ 'Runs;1': 'TTree',
+ 'MetaData;1': 'TTree',
+ 'ParameterSets;1': 'TTree'}</code></pre>
+</div>
+<p><code>Events</code> contains the variables of interest to us. Get it
+from the data with:</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>events <span class="op">=</span> <span class="bu">file</span>[<span class="st">'Events'</span>]</span></code></pre>
+</div>
+<p>Now, fetch some variables of interest, e.g. take all muon pt values
+in an array</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>pt <span class="op">=</span> events[<span class="st">'Muon_pt'</span>].array()</span></code></pre>
+</div>
+<div id="challenge-inspect-pt" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="challenge-inspect-pt" class="callout-inner">
+<h3 class="callout-title">Challenge: inspect pt<a class="anchor" aria-label="anchor" href="#challenge-inspect-pt"></a>
+</h3>
+<div class="callout-content">
+<p>Find out the type of the pt array. Print values of some of its
+elements. What do you observe?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<p>Find the type with</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="bu">type</span>(pt)</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="va">awkward.highlevel.Array</span></span></code></pre>
+</div>
+<p>Print out some of the value with</p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="bu">print</span>(pt)</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[[23.1], [39.3], [24.1], [91.9, 52.7], ... [88.7, 14.2], [58.9], [27.1], [50]]</code></pre>
+</div>
+<p>Note that the muon pt array can contain one or more elements,
+depending on the number of reconstructed muons in the event.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="section level3">
 <h3 id="plot-a-variable-with-python-tools">Plot a variable with python tools<a class="anchor" aria-label="anchor" href="#plot-a-variable-with-python-tools"></a></h3>
