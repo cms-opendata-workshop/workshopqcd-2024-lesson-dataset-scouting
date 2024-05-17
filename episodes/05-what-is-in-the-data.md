@@ -110,6 +110,7 @@ Now, fetch some variables of interest, e.g. take all muon pt values in an array
 ```python
 pt = events['Muon_pt'].array()
 ```
+::::::::::::::::::::::::::::::::::::: challenge
 
 ### Challenge: inspect pt
 
