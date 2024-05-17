@@ -1230,8 +1230,20 @@ and <a href="https://opendata.cern.ch/eos/opendata/cms/dataset-semantics/NanoAOD
 </h2>
 <hr class="half-width">
 <p>This part of the lesson will be done from within the <a href="https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-docker/03-docker-for-cms-opendata.html#root-tools-container" class="external-link">ROOT
-tools container</a>. You should have it available. All ROOT commands
-will be typed inside that environment.</p>
+tools container</a>. You should have it available, start it with:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">docker</span> start <span class="at">-i</span> my_root</span></code></pre>
+</div>
+<p>All ROOT commands will be typed inside that environment.</p>
+<p>If you are using VNC for the graphics, remember to start it before
+starting ROOT in the container prompt:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">start_vnc</span></span></code></pre>
+</div>
 <p>Work through the quick introduction to getting started with CMS
 NANOAOD Open Data in <a href="https://opendata.cern.ch/docs/cms-getting-started-nanoaod" class="external-link">the
 getting started guide page</a> on the CERN Open Data portal.</p>
@@ -1257,17 +1269,29 @@ ROOT</label></li>
 </h2>
 <hr class="half-width">
 <p>This part of the lesson will be done from within the <a href="https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-docker/03-docker-for-cms-opendata.html#python-tools-container" class="external-link">python
-tools container</a>. You should have it available. Open a new jupyter
-notebook from the jupyterlab tab that the container will open in your
-browser. Type the commands in code cells of the notebook.</p>
+tools container</a>. You should have it available, start it with:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">docker</span> start <span class="at">-i</span> my_python</span></code></pre>
+</div>
+<p>Start the jupyter lab with</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">jupyter-lab</span> <span class="at">--ip</span><span class="op">=</span>0.0.0.0 <span class="at">--no-browser</span></span></code></pre>
+</div>
+<p>Open a new jupyter notebook from the jupyter lab tab that the
+container will open in your browser. Type the commands in code cells of
+the notebook.</p>
 <p>First, import some python libraries:</p>
-<div class="codewrapper sourceCode" id="cb1">
+<div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="im">import</span> uproot</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pylab <span class="im">as</span> plt</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="im">import</span> awkward <span class="im">as</span> ak</span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="im">import</span> uproot</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pylab <span class="im">as</span> plt</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="im">import</span> awkward <span class="im">as</span> ak</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre>
 </div>
 <ul>
 <li>
@@ -1284,19 +1308,19 @@ scientific computing</li>
 library for variable-size data</li>
 </ul>
 <p>Then, open a file from a dataset:</p>
-<div class="codewrapper sourceCode" id="cb2">
+<div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> uproot.<span class="bu">open</span>(<span class="st">"root://eospublic.cern.ch//eos/opendata/cms/Run2016H/SingleMuon/NANOAOD/UL2016_MiniAODv2_NanoAODv9-v1/120000/61FC1E38-F75C-6B44-AD19-A9894155874E.root"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> uproot.<span class="bu">open</span>(<span class="st">"root://eospublic.cern.ch//eos/opendata/cms/Run2016H/SingleMuon/NANOAOD/UL2016_MiniAODv2_NanoAODv9-v1/120000/61FC1E38-F75C-6B44-AD19-A9894155874E.root"</span>)</span></code></pre>
 </div>
 <div class="section level3">
 <h3 id="print-out-event-content-with-python-tools">Print out event content with python tools<a class="anchor" aria-label="anchor" href="#print-out-event-content-with-python-tools"></a>
 </h3>
 <p>You can check the content blocks of the file with</p>
-<div class="codewrapper sourceCode" id="cb3">
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="bu">file</span>.classnames()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="bu">file</span>.classnames()</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1308,19 +1332,25 @@ library for variable-size data</li>
  'MetaData;1': 'TTree',
  'ParameterSets;1': 'TTree'}</code></pre>
 </div>
-<p><code>Events</code> contains the variables of interest to us. Get it
-from the data with:</p>
-<div class="codewrapper sourceCode" id="cb5">
+<p><code>Events</code> is the <code>TTree</code>object that contains the
+variables of interest to us. Get it from the data with:</p>
+<div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>events <span class="op">=</span> <span class="bu">file</span>[<span class="st">'Events'</span>]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>events <span class="op">=</span> <span class="bu">file</span>[<span class="st">'Events'</span>]</span></code></pre>
+</div>
+<p>You can list the full list of variables with</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>events.keys()</span></code></pre>
 </div>
 <p>Now, fetch some variables of interest, e.g. take all muon pt values
 in an array</p>
-<div class="codewrapper sourceCode" id="cb6">
+<div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>pt <span class="op">=</span> events[<span class="st">'Muon_pt'</span>].array()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>pt <span class="op">=</span> events[<span class="st">'Muon_pt'</span>].array()</span></code></pre>
 </div>
 <div id="challenge-inspect-pt" class="callout challenge">
 <div class="callout-square">
@@ -1343,10 +1373,10 @@ elements. What do you observe?</p>
 <div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Find the type with</p>
-<div class="codewrapper sourceCode" id="cb7">
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="bu">type</span>(pt)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="bu">type</span>(pt)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1354,10 +1384,10 @@ elements. What do you observe?</p>
 <pre class="output" tabindex="0"><code><span><span class="va">awkward.highlevel.Array</span></span></code></pre>
 </div>
 <p>Print out some of the values with</p>
-<div class="codewrapper sourceCode" id="cb9">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="bu">print</span>(pt)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="bu">print</span>(pt)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1369,10 +1399,10 @@ depending on the number of reconstructed muons in the event.</p>
 <p>From the <a href="https://awkward-array.org/doc/main/user-guide/how-to-filter-num.html#use-ak-num" class="external-link">awkward
 array documentation</a>, you can find out hot to choose the events with
 exactly two reconstructed muons:</p>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>pt[ak.num(pt) <span class="op">==</span> <span class="dv">2</span>]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>pt[ak.num(pt) <span class="op">==</span> <span class="dv">2</span>]</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1383,10 +1413,33 @@ exactly two reconstructed muons:</p>
 </div>
 </div>
 </div>
+<p>You can learn about awkward arrays and much more in the <a href="https://hsf-training.github.io/hsf-training-scikit-hep-webpage/04-awkward/index.html" class="external-link">HEP
+Software Foundation Scikit-HEP tutorial</a>.</p>
 </div>
 <div class="section level3">
 <h3 id="plot-a-variable-with-python-tools">Plot a variable with python tools<a class="anchor" aria-label="anchor" href="#plot-a-variable-with-python-tools"></a>
 </h3>
+<p>Common python plotting tools cannot handle arrays or arrays with
+different sizes, such as the muon pt. If you want to plot all muon pts,
+“flatten” the pt array first:</p>
+<div class="codewrapper sourceCode" id="cb18">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>ptflat<span class="op">=</span>ak.flatten(pt)</span></code></pre>
+</div>
+<p>Now plot the muon pt values with</p>
+<pre><code>plt.hist(ak.flatten(pt),bins=200,range=(0,200))
+plt.show()</code></pre>
+<p>You could also plot directly <code>ptflat</code> variable, but it you
+want to introduce some cuts that need the knowledge that certain values
+belong to the same event, you need to do them to the original pt array.
+For example, plotting the events with 2 muons:</p>
+<pre><code>plt.hist(ak.flatten(pt),bins=200,range=(0,200))
+plt.hist(ak.flatten(pt[ak.num(pt) == 2]),bins=200,range=(0,200))
+plt.show()</code></pre>
+<p>This is what you will see:</p>
+<figure><img src="fig/python_pt_plot_cms_2016_singlemuon_nanoaod.png" class="figure mx-auto d-block"></figure><p>If you’ve chose another dataset or another, it will look
+different.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
