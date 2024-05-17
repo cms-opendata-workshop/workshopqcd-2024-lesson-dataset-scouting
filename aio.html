@@ -298,7 +298,7 @@
         
 <section id="aio-01-introduction"><p>Content from <a href="01-introduction.html">Introduction</a></p>
 <hr>
-<p>Last updated on 2024-05-16 |
+<p>Last updated on 2024-05-17 |
         
         <a href="https://github.com/cms-opendata-workshop/workshopqcd-2024-lesson-dataset-scouting/edit/main/episodes/01-introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -339,12 +339,16 @@
 <h3 class="callout-title">Ready to go?<a class="anchor" aria-label="anchor" href="#ready-to-go"></a>
 </h3>
 <div class="callout-content">
-<p>The 3/4 of this lesson is done entirely in the browser.</p>
-<p>However, <a href="https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-dataset-scouting/04-cli-through-cernopendata-client.html" class="external-link">Episode
-4: How to access metadata on the command line?</a>, requires the use of
-a command-line tool. It is available as a Docker container or it can be
+<p>The first part of this lesson is done entirely in the browser.</p>
+<p>Then, <a href="04-cli-through-cernopendata-client.html">Episode 4:
+How to access metadata on the command line?</a> requires the use of a
+command-line tool. It is available as a Docker container or it can be
 installed with <code>pip</code>. Make sure you have completed the <a href="https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-docker/" class="external-link">Docker
-pre-exercise</a> and have docker installed..</p>
+pre-exercise</a> and have docker installed.</p>
+<p><a href="05-what-is-in-the-data.html">Episode 5: What is in the
+data?</a> is done in the root or python tools container. Make sure you
+have <a href="https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-docker/03-docker-for-cms-opendata.html" class="external-link">these
+containers available</a>.</p>
 </div>
 </div>
 </div>
@@ -982,16 +986,18 @@ your category of interest might have several hundred entries.</p>
 some more here:</p>
 <p>For 2016 data, you can select the format that you are going to use
 and that will half the number of entries. Choose, for example
-<strong>nanoaodsim” under </strong>File type**.</p>
+<strong>nanoaodsim</strong> under <strong>File type</strong>.</p>
 <p>To fit more entries to one page, you can choose the list view from
 the search, and increase the number of results per page. It will make
 the search slower.</p>
-<p>To search a string in the record title use, for example: -
-<code>title.tokens:*GluGluHToGG*</code> -
-<code>title.tokens:*DYToMuMu*</code> -
-<code>title.tokens:*sherpa*</code> -
-<code>title.tokens:*flat*</code></p>
-<div id="callout5" class="callout">
+<p>To search a string in the record title use, for example:</p>
+<ul>
+<li><code>title.tokens:*GluGluHToGG*</code></li>
+<li><code>title.tokens:*DYToMuMu*</code></li>
+<li><code>title.tokens:*sherpa*</code></li>
+<li><code>title.tokens:*flat*</code></li>
+</ul>
+<figure><img src="fig/portal_screenshot_search_cms_2016_mc_nanoaodsim_dytomumu.png" class="figure mx-auto d-block"></figure><div id="callout5" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
