@@ -59,16 +59,16 @@ This is equivalent to running `cernopendata-client --help`, when the tool is ins
 ### Get dataset information
 
 Each dataset has a unique identifier, a record id (or `recid`), that shows in the dataset URL and can be used in the cernopendata-client commands.
-For example, in the previous sections, you have seen that file listings are in multiple text files. To get the list of **all** files in the [/DoubleEG/Run2016G-UL2016_MiniAODv2-v1/MINIAOD](http://opendata.cern.ch/record/30504) dataset, use the following (`recid` of this dataset is 30504):
+For example, in the previous sections, you have seen that file listings are in multiple text files. To get the list of **all** files in the [/SingleMuon/Run2016H-UL2016_MiniAODv2_NanoAODv9-v1/NANOAOD](http://opendata.cern.ch/record/30563) dataset, use the following (`recid` of this dataset is 30563):
 
 ```bash
-docker run -i -t --rm docker.io/cernopendata/cernopendata-client  get-file-locations --recid 30504 --protocol xrootd
+docker run -i -t --rm docker.io/cernopendata/cernopendata-client  get-file-locations --recid 30563 --protocol xrootd
 ```
 
 or pipe it to a local file with:
 
 ```bash
-docker run -i -t --rm docker.io/cernopendata/cernopendata-client  get-file-locations --recid 30504 --protocol xrootd > files-recid-30504.txt
+docker run -i -t --rm docker.io/cernopendata/cernopendata-client  get-file-locations --recid 30563 --protocol xrootd > files-recid-30504.txt
 ```
 
 :::::: prereq
@@ -76,7 +76,7 @@ docker run -i -t --rm docker.io/cernopendata/cernopendata-client  get-file-locat
 See how to get the metadata fields in JSON format with
 
 ```bash
-docker run -i -t --rm docker.io/cernopendata/cernopendata-client  get-metadata --recid 30504
+docker run -i -t --rm docker.io/cernopendata/cernopendata-client  get-metadata --recid 30563
 ```
 
 Note that the JSON format can be displayed in the CERN Open data portal web interface by adding `/export/json` in the dataset URL. Try it! 
