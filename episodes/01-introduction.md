@@ -20,9 +20,12 @@ exercises: 0
 
 :::::: callout
 ## Ready to go?
-The 3/4 of this lesson is done entirely in the browser. 
+The first part of this lesson is done entirely in the browser. 
  
-However, [Episode 4: How to access metadata on the command line?](https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-dataset-scouting/04-cli-through-cernopendata-client.html), requires the use of a command-line tool. It is available as a Docker container or it can be installed with `pip`. Make sure you have completed the [Docker pre-exercise](https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-docker/) and have docker installed..
+Then, [Episode 4: How to access metadata on the command line?](04-cli-through-cernopendata-client.md) requires the use of a command-line tool. It is available as a Docker container or it can be installed with `pip`. Make sure you have completed the [Docker pre-exercise](https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-docker/) and have docker installed.
+
+[Episode 5: What is in the data?](05-what-is-in-the-data.md) is done in the root or python tools container. Make sure you have [these containers available](https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-docker/03-docker-for-cms-opendata.html).
+
 ::::::
 
 
