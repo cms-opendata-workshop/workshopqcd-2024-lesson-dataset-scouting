@@ -24,15 +24,17 @@ Each NANOAOD dataset has the variable list with a brief description attached to 
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Challenge
+### Challenge: variables
 
 Find the variable listings for a collision data record and a Monte Carlo data record. What are the differences? What is the same?
 
 :::::::::::::::: solution
 
+Why the font is bigger here?
+
  - The data records have a "Luminosity" block with some beam related information whereas MC records have a "Runs" block with event generation information.
  - The MC records have event generator or simulation information in the "Events" block.
- - The variables of reconstructed objects, such as Muon, are the same for [data](https://opendata.cern.ch/eos/opendata/cms/dataset-semantics/NanoAOD/30563/SingleMuon_doc.html#Muon) and [MC](https://opendata.cern.ch/eos/opendata/cms/dataset-semantics/NanoAODSIM/35751/DYToMuMu_M-120To200_TuneCP5_13TeV-powheg-pythia8_doc.html#Muon).
+ - The variables of reconstructed objects, such as Muons, are the same for [data](https://opendata.cern.ch/eos/opendata/cms/dataset-semantics/NanoAOD/30563/SingleMuon_doc.html#Muon) and [MC](https://opendata.cern.ch/eos/opendata/cms/dataset-semantics/NanoAODSIM/35751/DYToMuMu_M-120To200_TuneCP5_13TeV-powheg-pythia8_doc.html#Muon).
 
 :::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
@@ -54,7 +56,7 @@ Work through the quick introduction to getting started with CMS NANOAOD Open Dat
 ::::::::::::
 
 
-## Inspect a dataset with python tools
+## Inspect datasets with python tools
 
 This part of the lesson will be done from within the [python tools container](https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-docker/03-docker-for-cms-opendata.html#python-tools-container). You should have it available.
 Open a new jupyter notebook from the jupyterlab tab that the container will open in your browser. Type the commands in code cells of the notebook.
@@ -73,10 +75,73 @@ import numpy as np
  - [numpy](https://numpy.org/) is a python package for scientific computing
  - [awkard](https://awkward-array.org/doc/main/) is a python library for variable-size data
 
+Then, open a file from a dataset:
+
+```python
+file = uproot.open("root://eospublic.cern.ch//eos/opendata/cms/Run2016H/SingleMuon/NANOAOD/UL2016_MiniAODv2_NanoAODv9-v1/120000/61FC1E38-F75C-6B44-AD19-A9894155874E.root")
+```
 
 
 ### Print out event content with python tools
 
+You can check the content blocks of the file with
+
+```python
+file.classnames()
+```
+
+```output
+{'tag;1': 'TObjString',
+ 'Events;1': 'TTree',
+ 'LuminosityBlocks;1': 'TTree',
+ 'Runs;1': 'TTree',
+ 'MetaData;1': 'TTree',
+ 'ParameterSets;1': 'TTree'}
+```
+
+`Events` contains the variables of interest to us. Get it from the data with:
+
+```python
+events = file['Events']
+```
+
+Now, fetch some variables of interest, e.g. take all muon pt values in an array
+
+```python
+pt = events['Muon_pt'].array()
+```
+
+### Challenge: inspect pt
+
+Find out the type of the pt array. Print values of some of its elements. What do you observe?
+
+:::::::::::::::: solution
+
+Find the type with
+
+```python
+type(pt)
+```
+
+```output
+awkward.highlevel.Array
+```
+
+Print out some of the value with
+
+```python
+print(pt)
+```
+
+```output
+[[23.1], [39.3], [24.1], [91.9, 52.7], ... [88.7, 14.2], [58.9], [27.1], [50]]
+```
+
+Note that the muon pt array can contain one or more elements, depending on the number of reconstructed muons in the event.
+
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 
 ### Plot a variable with python tools
