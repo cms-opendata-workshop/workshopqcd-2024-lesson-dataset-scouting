@@ -368,9 +368,8 @@ getting started guide page</a> on the CERN Open Data portal.</p>
 <div class="callout-content">
 <ul class="task-list"><li><label><input type="checkbox" checked>how to print out the
 event content of a NANOAOD file in ROOT</label></li>
-<li><label><input type="checkbox" checked>how to make a plot of a
-variable in the NANOAOD file with some selection criteria in
-ROOT</label></li>
+<li><label><input type="checkbox" checked>how to plot a variable in
+the NANOAOD file with some selections in ROOT</label></li>
 </ul></div>
 </div>
 </div>
@@ -532,17 +531,25 @@ different sizes, such as the muon pt. If you want to plot all muon pts,
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>ptflat<span class="op">=</span>ak.flatten(pt)</span></code></pre>
 </div>
 <p>Now plot the muon pt values with</p>
-<pre><code>plt.hist(ak.flatten(pt),bins=200,range=(0,200))
-plt.show()</code></pre>
+<div class="codewrapper sourceCode" id="cb19">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>plt.hist(ak.flatten(pt),bins<span class="op">=</span><span class="dv">200</span>,<span class="bu">range</span><span class="op">=</span>(<span class="dv">0</span>,<span class="dv">200</span>))</span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>plt.show()</span></code></pre>
+</div>
 <p>You could also plot directly <code>ptflat</code> variable, but it you
 want to introduce some cuts that need the knowledge that certain values
 belong to the same event, you need to do them to the original pt array.
 For example, plotting the events with 2 muons:</p>
-<pre><code>plt.hist(ak.flatten(pt),bins=200,range=(0,200))
-plt.hist(ak.flatten(pt[ak.num(pt) == 2]),bins=200,range=(0,200))
-plt.show()</code></pre>
+<div class="codewrapper sourceCode" id="cb20">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>plt.hist(ak.flatten(pt),bins<span class="op">=</span><span class="dv">200</span>,<span class="bu">range</span><span class="op">=</span>(<span class="dv">0</span>,<span class="dv">200</span>))</span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>plt.hist(ak.flatten(pt[ak.num(pt) <span class="op">==</span> <span class="dv">2</span>]),bins<span class="op">=</span><span class="dv">200</span>,<span class="bu">range</span><span class="op">=</span>(<span class="dv">0</span>,<span class="dv">200</span>))</span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a>plt.show()</span></code></pre>
+</div>
 <p>This is what you will see:</p>
-<figure><img src="fig/python_pt_plot_cms_2016_singlemuon_nanoaod.png" class="figure mx-auto d-block"></figure><p>If you’ve chose another dataset or another, it will look
+<figure><img src="fig/python_pt_plot_cms_2016_singlemuon_nanoaod.png" class="figure mx-auto d-block"></figure><p>If you’ve chosen another dataset or another file, it will look
 different.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">

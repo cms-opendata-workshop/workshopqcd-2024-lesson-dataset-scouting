@@ -908,9 +908,9 @@ datasets<a class="anchor" aria-label="anchor" href="#cern-open-data-portal---cms
 </div>
 </div>
 <p>There are a lot of Monte Carlo samples! It’s up to you to determine
-which ones might contribute to your background. The names try to give
-you some sense of the primary process, subsequent decays, the beam
-energy and specific simulation software (e.g. Pythia), but if you have
+which ones might contribute to your analysis. The names try to give you
+some sense of the primary process, subsequent decays, the beam energy
+and specific simulation software (e.g. Pythia), but if you have
 questions, reach out to the organizers. <!-- through 
 [Mattermost](https://mattermost.web.cern.ch/cmsodws2022/channels/town-square). --></p>
 <p>As with the collision data, here are three (3) parts to the names,
@@ -976,6 +976,39 @@ generator information in the dataset provenance.</p>
 most appropriate for what you want to do, but remember, you can always
 reach out to the organizers. <!-- through 
 [Mattermost](https://mattermost.web.cern.ch/cmsodwswhepp24/channels/town-square). --></p>
+</section><section id="search-tips"><h2 class="section-heading">Search tips<a class="anchor" aria-label="anchor" href="#search-tips"></a>
+</h2>
+<hr class="half-width">
+<p>The category search is helpful to find relevant Monte Carlo datasets,
+but that’s not enough! The most recent CMS data release includes more
+than 40000 Monte Carlo datasets and even split into smaller categories,
+your category of interest might have several hundred entries.</p>
+<p>A help page provides some <a href="https://opendata.cern.ch/docs/cod-search-tips" class="external-link">search tips</a> and
+some more here:</p>
+<p>For 2016 data, you can select the format that you are going to use
+and that will half the number of entries. Choose, for example
+<strong>nanoaodsim” under </strong>File type**.</p>
+<p>To fit more entries to one page, you can choose the list view from
+the search, and increase the number of results per page. It will make
+the search slower.</p>
+<p>To search a string in the record title use, for example: -
+<code>title.tokens:*GluGluHToGG*</code> -
+<code>title.tokens:*DYToMuMu*</code> -
+<code>title.tokens:*sherpa*</code> -
+<code>title.tokens:*flat*</code></p>
+<div id="callout5" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout5"></a>
+</h3>
+<div class="callout-content">
+<p>Always check the generator parameters from the dataset provenance to
+be sure what you get!</p>
+</div>
+</div>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1265,9 +1298,8 @@ getting started guide page</a> on the CERN Open Data portal.</p>
 <ul class="task-list">
 <li><label><input type="checkbox" checked>how to print out the
 event content of a NANOAOD file in ROOT</label></li>
-<li><label><input type="checkbox" checked>how to make a plot of a
-variable in the NANOAOD file with some selection criteria in
-ROOT</label></li>
+<li><label><input type="checkbox" checked>how to plot a variable in
+the NANOAOD file with some selections in ROOT</label></li>
 </ul>
 </div>
 </div>
@@ -1435,17 +1467,25 @@ different sizes, such as the muon pt. If you want to plot all muon pts,
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>ptflat<span class="op">=</span>ak.flatten(pt)</span></code></pre>
 </div>
 <p>Now plot the muon pt values with</p>
-<pre><code>plt.hist(ak.flatten(pt),bins=200,range=(0,200))
-plt.show()</code></pre>
+<div class="codewrapper sourceCode" id="cb19">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>plt.hist(ak.flatten(pt),bins<span class="op">=</span><span class="dv">200</span>,<span class="bu">range</span><span class="op">=</span>(<span class="dv">0</span>,<span class="dv">200</span>))</span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>plt.show()</span></code></pre>
+</div>
 <p>You could also plot directly <code>ptflat</code> variable, but it you
 want to introduce some cuts that need the knowledge that certain values
 belong to the same event, you need to do them to the original pt array.
 For example, plotting the events with 2 muons:</p>
-<pre><code>plt.hist(ak.flatten(pt),bins=200,range=(0,200))
-plt.hist(ak.flatten(pt[ak.num(pt) == 2]),bins=200,range=(0,200))
-plt.show()</code></pre>
+<div class="codewrapper sourceCode" id="cb20">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>plt.hist(ak.flatten(pt),bins<span class="op">=</span><span class="dv">200</span>,<span class="bu">range</span><span class="op">=</span>(<span class="dv">0</span>,<span class="dv">200</span>))</span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>plt.hist(ak.flatten(pt[ak.num(pt) <span class="op">==</span> <span class="dv">2</span>]),bins<span class="op">=</span><span class="dv">200</span>,<span class="bu">range</span><span class="op">=</span>(<span class="dv">0</span>,<span class="dv">200</span>))</span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a>plt.show()</span></code></pre>
+</div>
 <p>This is what you will see:</p>
-<figure><img src="../fig/python_pt_plot_cms_2016_singlemuon_nanoaod.png" class="figure mx-auto d-block"></figure><p>If you’ve chose another dataset or another, it will look
+<figure><img src="../fig/python_pt_plot_cms_2016_singlemuon_nanoaod.png" class="figure mx-auto d-block"></figure><p>If you’ve chosen another dataset or another file, it will look
 different.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
