@@ -239,15 +239,18 @@ The category search is helpful to find relevant Monte Carlo datasets, but that's
 A help page provides some [search tips](https://opendata.cern.ch/docs/cod-search-tips) and some more here:
 
 
-For 2016 data, you can select the format that you are going to use and that will half the number of entries. Choose, for example **nanoaodsim" under **File type**.
+For 2016 data, you can select the format that you are going to use and that will half the number of entries. Choose, for example **nanoaodsim** under **File type**.
 
 To fit more entries to one page, you can choose the list view from the search, and increase the number of results per page. It will make the search slower.
 
-To search a string in the record title use, for example: 
+To search a string in the record title use, for example:
+
 - `title.tokens:*GluGluHToGG*`
 - `title.tokens:*DYToMuMu*`
 - `title.tokens:*sherpa*`
 - `title.tokens:*flat*`
+
+![](fig/portal_screenshot_search_cms_2016_mc_nanoaodsim_dytomumu.png)
 
 :::::: callout
 
