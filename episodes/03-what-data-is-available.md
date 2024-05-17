@@ -232,9 +232,7 @@ you can always reach out to the organizers.
 <!-- through 
 [Mattermost](https://mattermost.web.cern.ch/cmsodwswhepp24/channels/town-square). -->
 
-
-
 :::::: keypoints
-- The collision data are directed to different datasets based on trigger decisions
-- The Monte Carlo datasets contain a specific simulated physics process
+- The collision data are directed to different datasets based on trigger decisions.
+- The Monte Carlo datasets contain a specific simulated physics process.
 ::::::
