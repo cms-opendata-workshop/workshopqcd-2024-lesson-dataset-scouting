@@ -80,6 +80,7 @@ docker run -i -t --rm docker.io/cernopendata/cernopendata-client  get-metadata -
 ```
 
 Note that the JSON format can be displayed in the CERN Open data portal web interface by adding `/export/json` in the dataset URL. Try it! 
+::::::::::::
 
 ## Summary
 
