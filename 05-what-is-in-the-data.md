@@ -41,8 +41,19 @@ The variables of reconstructed objects, such as Muons, are the same for [data](h
 
 ## Inspect datasets with ROOT
 
-This part of the lesson will be done from within the [ROOT tools container](https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-docker/03-docker-for-cms-opendata.html#root-tools-container). You should have it available.
+This part of the lesson will be done from within the [ROOT tools container](https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-docker/03-docker-for-cms-opendata.html#root-tools-container). You should have it available, start it with:
+
+```bash
+docker start -i my_root
+```
+
 All ROOT commands will be typed inside that environment.
+
+If you are using VNC for the graphics, remember to start it before starting ROOT in the container prompt:
+
+```bash
+start_vnc
+```
 
 Work through the quick introduction to getting started with CMS NANOAOD Open Data in [the getting started guide page](https://opendata.cern.ch/docs/cms-getting-started-nanoaod) on the CERN Open Data portal.
 
@@ -58,8 +69,20 @@ Work through the quick introduction to getting started with CMS NANOAOD Open Dat
 
 ## Inspect datasets with python tools
 
-This part of the lesson will be done from within the [python tools container](https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-docker/03-docker-for-cms-opendata.html#python-tools-container). You should have it available.
-Open a new jupyter notebook from the jupyterlab tab that the container will open in your browser. Type the commands in code cells of the notebook.
+This part of the lesson will be done from within the [python tools container](https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-docker/03-docker-for-cms-opendata.html#python-tools-container). You should have it available, start it with:
+
+```bash
+docker start -i my_python
+```
+
+Start the jupyter lab with
+
+```bash
+jupyter-lab --ip=0.0.0.0 --no-browser
+```
+
+Open a new jupyter notebook from the jupyter lab tab that the container will open in your browser. 
+Type the commands in code cells of the notebook.
 
 First, import some python libraries:
 
@@ -99,10 +122,16 @@ file.classnames()
  'ParameterSets;1': 'TTree'}
 ```
 
-`Events` contains the variables of interest to us. Get it from the data with:
+`Events` is the `TTree`object that contains the variables of interest to us. Get it from the data with:
 
 ```python
 events = file['Events']
+```
+
+You can list the full list of variables with
+
+```python
+events.keys()
 ```
 
 Now, fetch some variables of interest, e.g. take all muon pt values in an array
@@ -153,8 +182,37 @@ pt[ak.num(pt) == 2]
 :::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
 
+You can learn about awkward arrays and much more in the [HEP Software Foundation Scikit-HEP tutorial](https://hsf-training.github.io/hsf-training-scikit-hep-webpage/04-awkward/index.html).
 
 ### Plot a variable with python tools
+
+Common python plotting tools cannot handle arrays or arrays with different sizes, such as the muon pt. If you want to plot all muon pts, "flatten" the pt array first:
+
+```python
+ptflat=ak.flatten(pt)
+```
+
+Now plot the muon pt values with
+
+```
+plt.hist(ak.flatten(pt),bins=200,range=(0,200))
+plt.show()
+```
+
+You could also plot directly `ptflat` variable, but it you want to introduce some cuts that need the knowledge that certain values belong to the same event, you need to do them to the original pt array. For example, plotting the events with 2 muons:
+
+```
+plt.hist(ak.flatten(pt),bins=200,range=(0,200))
+plt.hist(ak.flatten(pt[ak.num(pt) == 2]),bins=200,range=(0,200))
+plt.show()
+```
+
+This is what you will see:
+
+![](fig/python_pt_plot_cms_2016_singlemuon_nanoaod.png)
+
+If you've chose another dataset or another, it will look different.
+
 
 
 :::::: keypoints
