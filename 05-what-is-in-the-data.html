@@ -302,16 +302,48 @@
 <p>In the following, we will learn about CMS data in the NANOAOD format.
 This is the data format that can be accessed without CMS-specific
 software using ROOT or python tools.</p>
-<p>A part of this lesson will be done from within the <a href="https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-docker/03-docker-for-cms-opendata.html#root-tools-container" class="external-link">ROOT
-tools container</a>. You should have it available. All commands will be
-typed inside that environment.</p>
 <section id="nanoaod-variable-list"><h2 class="section-heading">NANOAOD variable list<a class="anchor" aria-label="anchor" href="#nanoaod-variable-list"></a>
 </h2>
 <hr class="half-width"><p>Each NANOAOD dataset has the variable list with a brief description
-attached in the portal record.</p>
+attached to the portal record.</p>
+<div id="challenge" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="challenge" class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
+</h3>
+<div class="callout-content">
+<p>Find the variable listings for a collision data record and a Monte
+Carlo data record. What are the differences? What is the same?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<ul><li>The data records have a “Luminosity” block with some beam related
+information whereas MC records have a “Runs” block with event generation
+information.</li>
+<li>The MC records have event generator or simulation information in the
+“Events” block.</li>
+<li>The variables of reconstructed objects, such as Muon, are the same
+for <a href="https://opendata.cern.ch/eos/opendata/cms/dataset-semantics/NanoAOD/30563/SingleMuon_doc.html#Muon" class="external-link">data</a>
+and <a href="https://opendata.cern.ch/eos/opendata/cms/dataset-semantics/NanoAODSIM/35751/DYToMuMu_M-120To200_TuneCP5_13TeV-powheg-pythia8_doc.html#Muon" class="external-link">MC</a>.</li>
+</ul></div>
+</div>
+</div>
+</div>
 </section><section id="inspect-datasets-with-root"><h2 class="section-heading">Inspect datasets with ROOT<a class="anchor" aria-label="anchor" href="#inspect-datasets-with-root"></a>
 </h2>
-<hr class="half-width"><p>Work through the quick introduction to getting started with CMS
+<hr class="half-width"><p>This part of the lesson will be done from within the <a href="https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-docker/03-docker-for-cms-opendata.html#root-tools-container" class="external-link">ROOT
+tools container</a>. You should have it available. All ROOT commands
+will be typed inside that environment.</p>
+<p>Work through the quick introduction to getting started with CMS
 NANOAOD Open Data in <a href="https://opendata.cern.ch/docs/cms-getting-started-nanoaod" class="external-link">the
 getting started guide page</a> on the CERN Open Data portal.</p>
 <div id="you-will-learn" class="callout checklist">
