@@ -62,7 +62,7 @@ Work through the quick introduction to getting started with CMS NANOAOD Open Dat
 ### You will learn:
 
 - [x] how to print out the event content of a NANOAOD file in ROOT
-- [x] how to make a plot of a variable in the NANOAOD file with some selection criteria in ROOT
+- [x] how to plot a variable in the NANOAOD file with some selections in ROOT
 
 ::::::::::::
 
@@ -194,14 +194,14 @@ ptflat=ak.flatten(pt)
 
 Now plot the muon pt values with
 
-```
+```python
 plt.hist(ak.flatten(pt),bins=200,range=(0,200))
 plt.show()
 ```
 
 You could also plot directly `ptflat` variable, but it you want to introduce some cuts that need the knowledge that certain values belong to the same event, you need to do them to the original pt array. For example, plotting the events with 2 muons:
 
-```
+```python
 plt.hist(ak.flatten(pt),bins=200,range=(0,200))
 plt.hist(ak.flatten(pt[ak.num(pt) == 2]),bins=200,range=(0,200))
 plt.show()
@@ -211,7 +211,7 @@ This is what you will see:
 
 ![](fig/python_pt_plot_cms_2016_singlemuon_nanoaod.png)
 
-If you've chose another dataset or another, it will look different.
+If you've chosen another dataset or another file, it will look different.
 
 
 

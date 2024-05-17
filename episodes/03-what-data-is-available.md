@@ -166,7 +166,7 @@ Monte Carlo dataset category search options
 
 
 There are a lot of Monte Carlo samples! It's up to you to determine which ones 
-might contribute to your background. The names try to give you some sense of
+might contribute to your analysis. The names try to give you some sense of
 the primary process, subsequent decays, the beam energy 
 and specific simulation software (e.g. Pythia), but if you have questions, 
 reach out to the organizers.
@@ -231,6 +231,29 @@ you want to do, but remember,
 you can always reach out to the organizers.
 <!-- through 
 [Mattermost](https://mattermost.web.cern.ch/cmsodwswhepp24/channels/town-square). -->
+
+## Search tips
+
+The category search is helpful to find relevant Monte Carlo datasets, but that's not enough! The most recent CMS data release includes more than 40000 Monte Carlo datasets and even split into smaller categories, your category of interest might have several hundred entries.
+
+A help page provides some [search tips](https://opendata.cern.ch/docs/cod-search-tips) and some more here:
+
+
+For 2016 data, you can select the format that you are going to use and that will half the number of entries. Choose, for example **nanoaodsim" under **File type**.
+
+To fit more entries to one page, you can choose the list view from the search, and increase the number of results per page. It will make the search slower.
+
+To search a string in the record title use, for example: 
+- `title.tokens:*GluGluHToGG*`
+- `title.tokens:*DYToMuMu*`
+- `title.tokens:*sherpa*`
+- `title.tokens:*flat*`
+
+:::::: callout
+
+Always check the generator parameters from the dataset provenance to be sure what you get!
+
+::::::::::::
 
 :::::: keypoints
 - The collision data are directed to different datasets based on trigger decisions.
