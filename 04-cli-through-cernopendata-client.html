@@ -92,11 +92,11 @@
   Dataset scouting
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 70%" class="percentage">
-    70%
+<aside class="col-md-12 lesson-progress"><div style="width: 58%" class="percentage">
+    58%
   </div>
   <div class="progress ">
-    <div class="progress-bar " role="progressbar" style="width: 70%" aria-valuenow="70" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar " role="progressbar" style="width: 58%" aria-valuenow="58" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -199,6 +199,15 @@
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush6">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading6">
+        <a href="05-what-is-in-the-data.html">5. What is in the datafiles?</a>
+    </div><!--/div.accordion-header-->
+        
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -242,7 +251,7 @@
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="03-what-data-is-available.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="05-what-is-in-the-data.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -250,8 +259,8 @@
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previous: What data and Monte
         </a>
-        <a class="chapter-link float-end" href="index.html" rel="next">
-          Home
+        <a class="chapter-link float-end" href="05-what-is-in-the-data.html" rel="next">
+          Next: What is in the... 
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -351,19 +360,19 @@ your container list each time you run a command.</p>
 <code>recid</code>), that shows in the dataset URL and can be used in
 the cernopendata-client commands. For example, in the previous sections,
 you have seen that file listings are in multiple text files. To get the
-list of <strong>all</strong> files in the <a href="http://opendata.cern.ch/record/30504" class="external-link">/DoubleEG/Run2016G-UL2016_MiniAODv2-v1/MINIAOD</a>
+list of <strong>all</strong> files in the <a href="http://opendata.cern.ch/record/30563" class="external-link">/SingleMuon/Run2016H-UL2016_MiniAODv2_NanoAODv9-v1/NANOAOD</a>
 dataset, use the following (<code>recid</code> of this dataset is
-30504):</p>
+30563):</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-i</span> <span class="at">-t</span> <span class="at">--rm</span> docker.io/cernopendata/cernopendata-client  get-file-locations <span class="at">--recid</span> 30504 <span class="at">--protocol</span> xrootd</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-i</span> <span class="at">-t</span> <span class="at">--rm</span> docker.io/cernopendata/cernopendata-client  get-file-locations <span class="at">--recid</span> 30563 <span class="at">--protocol</span> xrootd</span></code></pre>
 </div>
 <p>or pipe it to a local file with:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-i</span> <span class="at">-t</span> <span class="at">--rm</span> docker.io/cernopendata/cernopendata-client  get-file-locations <span class="at">--recid</span> 30504 <span class="at">--protocol</span> xrootd <span class="op">&gt;</span> files-recid-30504.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-i</span> <span class="at">-t</span> <span class="at">--rm</span> docker.io/cernopendata/cernopendata-client  get-file-locations <span class="at">--recid</span> 30563 <span class="at">--protocol</span> xrootd <span class="op">&gt;</span> files-recid-30504.txt</span></code></pre>
 </div>
 <div id="explore-other-metadata-fields" class="callout prereq">
 <div class="callout-square">
@@ -377,7 +386,7 @@ dataset, use the following (<code>recid</code> of this dataset is
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-i</span> <span class="at">-t</span> <span class="at">--rm</span> docker.io/cernopendata/cernopendata-client  get-metadata <span class="at">--recid</span> 30504</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-i</span> <span class="at">-t</span> <span class="at">--rm</span> docker.io/cernopendata/cernopendata-client  get-metadata <span class="at">--recid</span> 30563</span></code></pre>
 </div>
 <p>Note that the JSON format can be displayed in the CERN Open data
 portal web interface by adding <code>/export/json</code> in the dataset
@@ -415,7 +424,7 @@ any links that you are not going to use.
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="03-what-data-is-available.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="05-what-is-in-the-data.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -423,8 +432,8 @@ any links that you are not going to use.
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previous: What data and Monte
         </a>
-        <a class="chapter-link float-end" href="index.html" rel="next">
-          Home
+        <a class="chapter-link float-end" href="05-what-is-in-the-data.html" rel="next">
+          Next: What is in the... 
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>

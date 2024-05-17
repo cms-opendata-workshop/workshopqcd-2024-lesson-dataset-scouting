@@ -230,6 +230,18 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush6">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading6">
+        <a href="05-what-is-in-the-data.html">5. What is in the datafiles?</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -626,7 +638,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-03-what-data-is-available"><p>Content from <a href="03-what-data-is-available.html">What data and Monte Carlo are available?</a></p>
 <hr>
-<p>Last updated on 2024-05-16 |
+<p>Last updated on 2024-05-17 |
         
         <a href="https://github.com/cms-opendata-workshop/workshopqcd-2024-lesson-dataset-scouting/edit/main/episodes/03-what-data-is-available.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -969,9 +981,9 @@ reach out to the organizers. <!-- through
 <div class="callout-content">
 <ul>
 <li>The collision data are directed to different datasets based on
-trigger decisions</li>
+trigger decisions.</li>
 <li>The Monte Carlo datasets contain a specific simulated physics
-process</li>
+process.</li>
 </ul>
 </div>
 </div>
@@ -1077,19 +1089,19 @@ your container list each time you run a command.</p>
 <code>recid</code>), that shows in the dataset URL and can be used in
 the cernopendata-client commands. For example, in the previous sections,
 you have seen that file listings are in multiple text files. To get the
-list of <strong>all</strong> files in the <a href="http://opendata.cern.ch/record/30504" class="external-link">/DoubleEG/Run2016G-UL2016_MiniAODv2-v1/MINIAOD</a>
+list of <strong>all</strong> files in the <a href="http://opendata.cern.ch/record/30563" class="external-link">/SingleMuon/Run2016H-UL2016_MiniAODv2_NanoAODv9-v1/NANOAOD</a>
 dataset, use the following (<code>recid</code> of this dataset is
-30504):</p>
+30563):</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-i</span> <span class="at">-t</span> <span class="at">--rm</span> docker.io/cernopendata/cernopendata-client  get-file-locations <span class="at">--recid</span> 30504 <span class="at">--protocol</span> xrootd</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-i</span> <span class="at">-t</span> <span class="at">--rm</span> docker.io/cernopendata/cernopendata-client  get-file-locations <span class="at">--recid</span> 30563 <span class="at">--protocol</span> xrootd</span></code></pre>
 </div>
 <p>or pipe it to a local file with:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-i</span> <span class="at">-t</span> <span class="at">--rm</span> docker.io/cernopendata/cernopendata-client  get-file-locations <span class="at">--recid</span> 30504 <span class="at">--protocol</span> xrootd <span class="op">&gt;</span> files-recid-30504.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-i</span> <span class="at">-t</span> <span class="at">--rm</span> docker.io/cernopendata/cernopendata-client  get-file-locations <span class="at">--recid</span> 30563 <span class="at">--protocol</span> xrootd <span class="op">&gt;</span> files-recid-30504.txt</span></code></pre>
 </div>
 <div id="explore-other-metadata-fields" class="callout prereq">
 <div class="callout-square">
@@ -1103,7 +1115,7 @@ dataset, use the following (<code>recid</code> of this dataset is
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-i</span> <span class="at">-t</span> <span class="at">--rm</span> docker.io/cernopendata/cernopendata-client  get-metadata <span class="at">--recid</span> 30504</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-i</span> <span class="at">-t</span> <span class="at">--rm</span> docker.io/cernopendata/cernopendata-client  get-metadata <span class="at">--recid</span> 30563</span></code></pre>
 </div>
 <p>Note that the JSON format can be displayed in the CERN Open data
 portal web interface by adding <code>/export/json</code> in the dataset
@@ -1133,6 +1145,97 @@ what you would like to see implemented!
 <ul>
 <li>cernopendata-client is a command-line tool to download dataset files
 and metadata from the CERN Open Data portal.</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- 
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use. 
+ -->
+</section></section><section id="aio-05-what-is-in-the-data"><p>Content from <a href="05-what-is-in-the-data.html">What is in the datafiles?</a></p>
+<hr>
+<p>Last updated on 2024-05-17 |
+        
+        <a href="https://github.com/cms-opendata-workshop/workshopqcd-2024-lesson-dataset-scouting/edit/main/episodes/05-what-is-in-the-data.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>How do I inspect these files to see what is in them?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>To be able to see what objects are in the data files</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>In the following, we will learn about CMS data in the NANOAOD format.
+This is the data format that can be accessed without CMS-specific
+software using ROOT or python tools.</p>
+<p>A part of this lesson will be done from within the <a href="https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-docker/03-docker-for-cms-opendata.html#root-tools-container" class="external-link">ROOT
+tools container</a>. You should have it available. All commands will be
+typed inside that environment.</p>
+<section id="nanoaod-variable-list"><h2 class="section-heading">NANOAOD variable list<a class="anchor" aria-label="anchor" href="#nanoaod-variable-list"></a>
+</h2>
+<hr class="half-width">
+<p>Each NANOAOD dataset has the variable list with a brief description
+attached in the portal record.</p>
+</section><section id="inspect-datasets-with-root"><h2 class="section-heading">Inspect datasets with ROOT<a class="anchor" aria-label="anchor" href="#inspect-datasets-with-root"></a>
+</h2>
+<hr class="half-width">
+<p>Work through the quick introduction to getting started with CMS
+NANOAOD Open Data in <a href="https://opendata.cern.ch/docs/cms-getting-started-nanoaod" class="external-link">the
+getting started guide page</a> on the CERN Open Data portal.</p>
+<div id="you-will-learn" class="callout checklist">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check-square"></i>
+</div>
+<div id="you-will-learn" class="callout-inner">
+<h3 class="callout-title">You will learn:<a class="anchor" aria-label="anchor" href="#you-will-learn"></a>
+</h3>
+<div class="callout-content">
+<ul class="task-list">
+<li><label><input type="checkbox" checked>how to print out the
+event content of a NANOAOD file in ROOT</label></li>
+<li><label><input type="checkbox" checked>how to make a plot of a
+variable in the NANOAOD file with some selection criteria in
+ROOT</label></li>
+</ul>
+</div>
+</div>
+</div>
+</section><section id="inspect-dataset-with-python-tools"><h2 class="section-heading">Inspect dataset with python tools<a class="anchor" aria-label="anchor" href="#inspect-dataset-with-python-tools"></a>
+</h2>
+<hr class="half-width">
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li>It’s useful to inspect the files before diving into the full
+analysis.</li>
+<li>Some files may not have the information you’re looking for.</li>
 </ul>
 </div>
 </div>
