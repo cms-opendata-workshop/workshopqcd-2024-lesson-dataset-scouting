@@ -94,7 +94,7 @@ You will find that all the datasets have their DOI listed at the top of their pa
 Can you locate where the DOI is shown for this dataset, Record 30521,
 [ DoubleEG primary dataset in NANOAOD format from RunG of 2016 (/DoubleEG/Run2016G-UL2016_MiniAODv2_NanoAODv9-v1/NANOAOD)](https://opendata.cern.ch/record/30521)
 
-Image here from assets/img/portal_screenshot_DOI_example.png
+![](fig/portal_screenshot_cms_2016_doubleeg_nanoaod.png)
 
 With a DOI, you can create citations to any of these records, for example using a tool like [doi2bib](https://www.doi2bib.org).
 :::::: 
