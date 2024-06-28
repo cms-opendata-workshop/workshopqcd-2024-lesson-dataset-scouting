@@ -2,5 +2,6 @@
 title: Setup
 ---
 
-No files need to be downloaded before this lesson. Most of this lesson can be worked through a web broswer. Episode 5 introduces a command line tool to inspect and download open data files and their metadata, and it will require using a Unix terminal (Linux, MacOS terminal, or Windows WSL2 Ubuntu terminal).
+First episodes of this lesson can be worked through in a web browser.
+Episodes 4 and 5 use Docker containers to inspect and download open data files and their metadata, and it will require using a Unix terminal (Linux, MacOS terminal, or Windows WSL2 Ubuntu terminal) with [Docker installed](https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-docker/).
 
