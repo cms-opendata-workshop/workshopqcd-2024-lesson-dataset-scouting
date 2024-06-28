@@ -109,7 +109,7 @@ These files are not a focus of this workshop.
 * **AOD** stands for *Analysis Object Data*. This was the first stage of data where analysts can really start
 physics analysis when using Run 1 data.
 * **MINIAOD** is a slimmer format of AOD, in use in CMS from Run 2 data on.
-* **NANOAOD**  is slimmed-down version of MINIAOD, and, in conrast to all other formats above, does not require CMS-specific software
+* **NANOAOD**  is slimmed-down version of MINIAOD, and, in contrast to all other formats above, does not require CMS-specific software
 for analysis.
 
 ### Further information
