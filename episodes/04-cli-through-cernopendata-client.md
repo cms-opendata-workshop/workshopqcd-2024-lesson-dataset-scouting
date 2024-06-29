@@ -68,7 +68,7 @@ docker run -i -t --rm docker.io/cernopendata/cernopendata-client  get-file-locat
 or pipe it to a local file with:
 
 ```bash
-docker run -i -t --rm docker.io/cernopendata/cernopendata-client  get-file-locations --recid 30563 --protocol xrootd > files-recid-30504.txt
+docker run -i -t --rm docker.io/cernopendata/cernopendata-client  get-file-locations --recid 30563 --protocol xrootd > files-recid-30563.txt
 ```
 
 :::::: prereq
