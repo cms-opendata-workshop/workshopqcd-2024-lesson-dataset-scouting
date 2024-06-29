@@ -245,10 +245,10 @@ To fit more entries to one page, you can choose the list view from the search, a
 
 To search a string in the record title use, for example:
 
-- `title.tokens:*GluGluHToGG*`
-- `title.tokens:*DYToMuMu*`
-- `title.tokens:*sherpa*`
-- `title.tokens:*flat*`
+- `GluGluHToGG*`
+- `DYToMuMu*`
+- `*sherpa*`
+- `*flat*`
 
 ![](fig/portal_screenshot_search_cms_2016_mc_nanoaodsim_dytomumu.png)
 
