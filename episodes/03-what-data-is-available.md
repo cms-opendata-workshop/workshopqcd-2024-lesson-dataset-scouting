@@ -167,7 +167,7 @@ Monte Carlo dataset category search options
 
 There are a lot of Monte Carlo samples! It's up to you to determine which ones 
 might contribute to your analysis. The names try to give you some sense of
-the primary process, subsequent decays, the beam energy 
+the primary process, subsequent decays, the collision energy 
 and specific simulation software (e.g. Pythia), but if you have questions, 
 reach out to the organizers.
 <!-- through 
@@ -187,7 +187,7 @@ if we take our time we might be able to intuit some of the meaning. This appears
 to simulate a [Drell-Yan process](https://en.wikipedia.org/wiki/Drell%E2%80%93Yan_process) 
 in which two quarks interact to produce a virtual photon/Z boson which then couples to 
 two leptons. The *M-120To200* refers to a selection that has been imposed requiring the mass of the di-lepton 
-pair to be between 120 and 200 50 GeV/c^2. *TuneCP5* refers to the the set of CMS underlying-event parameters of PYTHIA8 event generator. *13TeV* is the beam energy used in the simulation, 
+pair to be between 120 and 200 50 GeV/c^2. *TuneCP5* refers to the the set of CMS underlying-event parameters of PYTHIA8 event generator. *13TeV* is the center-of-mass energy of the collision used in the simulation, 
 the remaining fields tell us what 
 software was used to generate this (*powheg* for event generation and *pythia8* for hadronization).
 
