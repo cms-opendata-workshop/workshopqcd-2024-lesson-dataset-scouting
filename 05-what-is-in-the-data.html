@@ -46,7 +46,7 @@
             </li>
           </ul></li>
       </div>
-      
+
       <div class="dropdown" id="instructor-dropdown">
         <button class="btn btn-secondary dropdown-toggle bordered-button" type="button" id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
           <i aria-hidden="true" class="icon" data-feather="eye"></i> Learner View <i data-feather="chevron-down"></i>
@@ -170,7 +170,7 @@
                 </div><!--/div.accordion-flush-->
               </div><!--div.sidenav-view-selector -->
             </div><!--/div.col -->
-      
+
             <hr></div><!--/div.mobile-row -->
 
           <div class="accordion accordion-flush" id="accordionFlush11">
@@ -189,7 +189,7 @@
     <div class="accordion-header" id="flush-heading1">
         <a href="index.html">Summary and Setup</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -198,7 +198,7 @@
     <div class="accordion-header" id="flush-heading2">
         <a href="01-introduction.html">1. Introduction</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -207,7 +207,7 @@
     <div class="accordion-header" id="flush-heading3">
         <a href="02-where-are-the-datasets.html">2. Where are the datasets?</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -216,7 +216,7 @@
     <div class="accordion-header" id="flush-heading4">
         <a href="03-what-data-is-available.html">3. What data and Monte Carlo are available?</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -225,7 +225,7 @@
     <div class="accordion-header" id="flush-heading5">
         <a href="04-cli-through-cernopendata-client.html">4. How to access metadata on the command line?</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -239,7 +239,7 @@
         </span>
       </button>
     </div><!--/div.accordion-header-->
-        
+
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#nanoaod-variable-list">NANOAOD variable list</a></li>
@@ -247,7 +247,7 @@
 <li><a href="#inspect-datasets-with-python-tools">Inspect datasets with python tools</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -279,10 +279,10 @@
               </div>
             </div>
             <hr class="half-width resources"><a href="aio.html">See all in one page</a>
-            
+
 
             <hr class="d-none d-sm-block d-md-none"><div class="d-grid gap-1">
-            
+
             </div>
           </div><!-- /div.accordion -->
         </div><!-- /div.sidebar-inner -->
@@ -310,11 +310,11 @@
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>What is in the datafiles?</h1>
         <p>Last updated on 2024-05-17 |
-        
+
         <a href="https://github.com/cms-opendata-workshop/workshopqcd-2024-lesson-dataset-scouting/edit/main/episodes/05-what-is-in-the-data.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-        
-        
-        
+
+
+
         <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -345,8 +345,8 @@
 <p>In the following, we will learn about CMS data in the NANOAOD format.
 This is the data format that can be accessed without CMS-specific
 software using ROOT or python tools.</p>
-<section id="nanoaod-variable-list"><h2 class="section-heading">NANOAOD variable list<a class="anchor" aria-label="anchor" href="#nanoaod-variable-list"></a>
-</h2>
+<section><h2 class="section-heading" id="nanoaod-variable-list">NANOAOD variable list<a class="anchor" aria-label="anchor" href="#nanoaod-variable-list"></a>
+<a class="anchor" aria-label="anchor" href="#nanoaod-variable-list"></a></h2>
 <hr class="half-width"><p>Each NANOAOD dataset has the variable list with a brief description
 attached to the portal record.</p>
 <div id="challenge-variables" class="callout challenge">
@@ -381,8 +381,8 @@ and <a href="https://opendata.cern.ch/eos/opendata/cms/dataset-semantics/NanoAOD
 </div>
 </div>
 </div>
-</section><section id="inspect-datasets-with-root"><h2 class="section-heading">Inspect datasets with ROOT<a class="anchor" aria-label="anchor" href="#inspect-datasets-with-root"></a>
-</h2>
+</section><section><h2 class="section-heading" id="inspect-datasets-with-root">Inspect datasets with ROOT<a class="anchor" aria-label="anchor" href="#inspect-datasets-with-root"></a>
+<a class="anchor" aria-label="anchor" href="#inspect-datasets-with-root"></a></h2>
 <hr class="half-width"><p>This part of the lesson will be done from within the <a href="https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-docker/03-docker-for-cms-opendata.html#root-tools-container" class="external-link">ROOT
 tools container</a>. You should have it available, start it with:</p>
 <div class="codewrapper sourceCode" id="cb1">
@@ -416,8 +416,8 @@ the NANOAOD file with some selections in ROOT</label></li>
 </ul></div>
 </div>
 </div>
-</section><section id="inspect-datasets-with-python-tools"><h2 class="section-heading">Inspect datasets with python tools<a class="anchor" aria-label="anchor" href="#inspect-datasets-with-python-tools"></a>
-</h2>
+</section><section><h2 class="section-heading" id="inspect-datasets-with-python-tools">Inspect datasets with python tools<a class="anchor" aria-label="anchor" href="#inspect-datasets-with-python-tools"></a>
+<a class="anchor" aria-label="anchor" href="#inspect-datasets-with-python-tools"></a></h2>
 <hr class="half-width"><p>This part of the lesson will be done from within the <a href="https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-docker/03-docker-for-cms-opendata.html#python-tools-container" class="external-link">python
 tools container</a>. You should have it available, start it with:</p>
 <div class="codewrapper sourceCode" id="cb3">
@@ -608,9 +608,9 @@ analysis.</li>
 </ul></div>
 </div>
 </div>
-<!-- 
+<!--
 Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use. 
+any links that you are not going to use.
  -->
 </div>
 </section></div> <!-- / div.lesson-content -->
@@ -636,18 +636,18 @@ any links that you are not going to use.
       		<footer class="row footer mx-md-3"><hr><div class="col-md-6">
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
-        
+
         <a href="https://github.com/cms-opendata-workshop/workshopqcd-2024-lesson-dataset-scouting/edit/main/episodes/05-what-is-in-the-data.md" class="external-link">Edit on GitHub</a>
-        
+
 	
         | <a href="https://github.com/cms-opendata-workshop/workshopqcd-2024-lesson-dataset-scouting/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
         | <a href="https://github.com/cms-opendata-workshop/workshopqcd-2024-lesson-dataset-scouting/" class="external-link">Source</a></p>
 				<p><a href="https://github.com/cms-opendata-workshop/workshopqcd-2024-lesson-dataset-scouting/blob/main/CITATION.cff" class="external-link">Cite</a> | <a href="mailto:cms-dpoa-coordinators@cern.ch">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 			</div>
 			<div class="col-md-6">
-        
+
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
-        
+
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
         <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.5" class="external-link">sandpaper (0.16.5)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.3" class="external-link">varnish (1.0.3)</a></p>
 			</div>
@@ -672,7 +672,7 @@ any links that you are not going to use.
   "identifier": "https://cms-opendata-workshop.github.io/workshopqcd-2024-lesson-dataset-scouting/05-what-is-in-the-data.html",
   "dateCreated": "2024-06-29",
   "dateModified": "2024-05-17",
-  "datePublished": "2024-07-02"
+  "datePublished": "2024-07-09"
 }
 
   </script><script>
